@@ -1,0 +1,6 @@
+.env
+*.tmp
+__pycache__/
+state/watcher.log*
+state/watcher.pid
+state/watcher.lock

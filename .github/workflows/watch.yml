@@ -1,0 +1,80 @@
+name: watch
+
+on:
+  schedule:
+    # Every 5 minutes (UTC). GitHub may delay or drop scheduled runs under load.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+    inputs:
+      force_metar:
+        description: "Fetch PHNL METAR even if the last fetch was < 30 min ago"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write   # commit state/ back to the repo
+  actions: write    # weekly keepalive: re-enable workflows via the API
+
+# Never run two cycles at once; a queued run waits for the current one.
+concurrency:
+  group: watcher
+  cancel-in-progress: false
+
+jobs:
+  cycle:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Run one watcher cycle
+        env:
+          CALEB_WATCHER_WEBHOOK_URL: ${{ secrets.CALEB_WATCHER_WEBHOOK_URL }}
+          CALEB_WATCHER_WEBHOOK_KEY: ${{ secrets.CALEB_WATCHER_WEBHOOK_KEY }}
+          FORCE_METAR: ${{ inputs.force_metar && '--force-metar' || '' }}
+        run: python3 watcher.py --once $FORCE_METAR
+
+      - name: Keepalive (at most once a week)
+        # Scheduled workflows in public repos are auto-disabled after 60 days
+        # without repository activity. The state commits below count as
+        # activity, and as a second guard we re-enable both workflows via the
+        # API once a week (the same approach as keepalive-workflow v2).
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          marker=state/keepalive.txt
+          last=$(cat "$marker" 2>/dev/null || echo 0)
+          now=$(date -u +%s)
+          if [ $((now - last)) -ge 604800 ]; then
+            for wf in watch.yml keepalive.yml; do
+              gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${wf}/enable" \
+                && echo "re-enabled ${wf}" || echo "::warning::could not re-enable ${wf}"
+            done
+            echo "$now" > "$marker"
+          else
+            echo "keepalive not due (last $(date -u -d @"$last" +%FT%TZ))"
+          fi
+
+      - name: Commit state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add state
+          if git diff --cached --quiet; then
+            echo "no state changes"
+            exit 0
+          fi
+          git commit -q -m "state: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          for i in 1 2 3 4 5; do
+            if git push -q origin HEAD:${GITHUB_REF_NAME}; then
+              echo "pushed"
+              exit 0
+            fi
+            echo "push rejected; rebasing (attempt $i)"
+            git pull --rebase -q origin "${GITHUB_REF_NAME}" || { git rebase --abort || true; }
+            sleep $((i * 3))
+          done
+          echo "::error::could not push state after 5 attempts"
+          exit 1

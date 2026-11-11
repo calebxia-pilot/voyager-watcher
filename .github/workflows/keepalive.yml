@@ -1,0 +1,25 @@
+name: keepalive
+
+# Backup guard against GitHub auto-disabling scheduled workflows after 60
+# days without repository activity. Re-enables both workflows weekly.
+on:
+  schedule:
+    - cron: "17 9 * * 1"   # Mondays 09:17 UTC
+  workflow_dispatch:
+
+permissions:
+  actions: write
+
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Re-enable workflows
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          for wf in watch.yml keepalive.yml; do
+            gh api -X PUT "repos/${GITHUB_REPOSITORY}/actions/workflows/${wf}/enable" \
+              && echo "re-enabled ${wf}"
+          done
