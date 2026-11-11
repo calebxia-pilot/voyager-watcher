@@ -44,7 +44,7 @@ PID_PATH = DIR / "watcher.pid"
 LOCK_PATH = DIR / "watcher.lock"
 WAKES_LOG = DIR / "wakes.log"
 WAKE_STATE_PATH = DIR / "wake_state.json"
-ENV_PATH = CODE_DIR / ".env"
+ENV_PATH = Path(os.environ.get("WATCHER_ENV_FILE") or (CODE_DIR / ".env"))
 KEEPALIVE_PATH = DIR / "keepalive.txt"
 
 DSN_URL = "https://eyes.nasa.gov/dsn/data/dsn.xml"
