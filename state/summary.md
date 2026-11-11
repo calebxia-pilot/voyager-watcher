@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-11 14:56 America/Edmonton (2026-11-11T20:56:52Z)
+Generated: 2026-11-11 15:06 America/Edmonton (2026-11-11T21:06:03Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -15,7 +15,7 @@ No contacts in the last 24 hours.
 ## Notable events
 
 - 2026-11-11 08:32 America/Edmonton (2026-11-11T14:32:19Z) — VGR2 signal acquired on DSS-43 (Canberra, X 160 bps, -160 dBm)
-- 2026-11-11 09:31 America/Edmonton (2026-11-11T15:31:11Z) → 2026-11-11 14:56 America/Edmonton (2026-11-11T20:56:46Z) — DSN feed down (31 cycle(s); feed down: all 15 dishes in the same placeholder state (az 0, el 90, activity 'Engineering Upgrades', target 'DSN')); still down
+- 2026-11-11 09:31 America/Edmonton (2026-11-11T15:31:11Z) → 2026-11-11 15:05 America/Edmonton (2026-11-11T21:05:56Z) — DSN feed down (32 cycle(s); feed down: all 15 dishes in the same placeholder state (az 0, el 90, activity 'Engineering Upgrades', target 'DSN')); still down
 
 ## Offline / anomalous dishes (latest snapshot)
 
