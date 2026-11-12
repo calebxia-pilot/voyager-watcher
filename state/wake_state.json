@@ -1,18 +1,9 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-12T10:03:27Z",
+    "ts_utc": "2026-11-12T11:06:15Z",
     "ok": true,
     "contacts": [
-      {
-        "spacecraft": "VGR1",
-        "dish": "DSS-63",
-        "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 160.0
-      },
       {
         "spacecraft": "VGR2",
         "dish": "DSS-43",
@@ -34,10 +25,10 @@
     }
   ],
   "queue": {
-    "event": "voyager_acquired",
-    "detail": "VGR1 signal acquired after a gap on DSS-43 (Canberra, X 0 bps, -480 dBm).",
-    "time_utc": "2026-11-12T05:41:21Z",
-    "detected_utc": "2026-11-12T05:41:27Z"
+    "event": "voyager_lost",
+    "detail": "VGR1 signal lost after a gap (was on DSS-63). No dish is tracking it in the latest DSN snapshot.",
+    "time_utc": "2026-11-12T11:06:15Z",
+    "detected_utc": "2026-11-12T11:06:20Z"
   },
   "feed_down_since": null
 }
