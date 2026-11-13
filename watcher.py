@@ -755,6 +755,8 @@ def build_events(records: list[dict]) -> list[str]:
             if not sc or not dish:
                 continue
             sig = primary_downlink(c)
+            if not is_locked(c.get("signal_active") or sig.get("active"), sig.get("power_dbm")):
+                continue  # pointed/setup only, not a lock
             current[(sc, dish)] = {
                 "active": bool(c.get("signal_active") or sig.get("active")),
                 "power": sig.get("power_dbm"),
@@ -1096,6 +1098,16 @@ def next_seven_am(now: Optional[datetime] = None) -> datetime:
     return seven + timedelta(days=1)
 
 
+def is_locked(active: Any, power: Any) -> bool:
+    """A real downlink lock: DSN says the signal is active and the power is a
+    real number, not the feed's -480/-470 dBm "nothing here" placeholder.
+    A dish that is only pointed or in setup (active=false) is not a lock."""
+    try:
+        return bool(active) and power is not None and float(power) > -300.0
+    except (TypeError, ValueError):
+        return False
+
+
 def compact_contacts(dsn: dict) -> list[dict]:
     rows = []
     for c in dsn.get("contacts") or []:
@@ -1177,6 +1189,13 @@ def detect_wake_events(
             for c in compact_contacts(dsn)
             if c.get("spacecraft") and c.get("dish")
         }
+        # Only real locks count for acquired/lost/new-antenna. A dish that is
+        # assigned and pointed but not receiving (active=false, -480 dBm) is
+        # intent, not signal (false VGR1 "acquired" on DSS-43, 2026-11-13 02:27Z).
+        prev_map = {k: c for k, c in prev_map.items()
+                    if is_locked(c.get("signal_active"), c.get("power_dbm"))}
+        curr_map = {k: c for k, c in curr_map.items()
+                    if is_locked(c.get("signal_active"), c.get("power_dbm"))}
         prev_by_sc: dict[str, set] = {}
         curr_by_sc: dict[str, set] = {}
         for sc, dish in prev_map:
