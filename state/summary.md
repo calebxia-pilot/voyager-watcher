@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-13 16:48 America/Edmonton (2026-11-13T22:48:18Z)
+Generated: 2026-11-13 17:26 America/Edmonton (2026-11-13T23:26:32Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -56,22 +56,21 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 ## Offline / anomalous dishes (latest snapshot)
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
-- DSS-24 (Goldstone): offline — Antenna Preventative Maintenance
 - DSS-55 (Madrid): offline — Engineering Upgrades
 
 ## Latest PHNL wind
 
-Observed: 2026-11-13 16:00 America/Edmonton (2026-11-13T22:00:00Z)
-Wind: 060° at 16 kt, gusting 22 kt
+Observed: 2026-11-13 17:00 America/Edmonton (2026-11-13T23:00:00Z)
+Wind: 080° at 19 kt, gusting 28 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 132153Z 06016G22KT 10SM FEW025 SCT038 28/19 A3010 RMK AO2 RAE2055 SLP191 P0000 T02780189 $`
+Raw: `METAR PHNL 132253Z 08019G28KT 10SM FEW025 SCT039 SCT050 29/17 A3007 RMK AO2 PK WND 06028/2250 SLP183 T02890172 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 Gust values in parentheses.
 
-- 08R (080°): crosswind 5.5 kt from the left, headwind 15 kt (gust: 7.5 kt cross, HW 20.7 kt)
-- 26L (260°): crosswind 5.5 kt from the right, tailwind 15 kt (gust: 7.5 kt cross, TW 20.7 kt)
-- 04R (040°): crosswind 5.5 kt from the right, headwind 15 kt (gust: 7.5 kt cross, HW 20.7 kt)
-- 22L (220°): crosswind 5.5 kt from the left, tailwind 15 kt (gust: 7.5 kt cross, TW 20.7 kt)
+- 08R (080°): no crosswind, headwind 19 kt (gust: 0 kt cross, HW 28 kt)
+- 26L (260°): no crosswind, tailwind 19 kt (gust: 0 kt cross, TW 28 kt)
+- 04R (040°): crosswind 12.2 kt from the right, headwind 14.6 kt (gust: 18 kt cross, HW 21.4 kt)
+- 22L (220°): crosswind 12.2 kt from the left, tailwind 14.6 kt (gust: 18 kt cross, TW 21.4 kt)
