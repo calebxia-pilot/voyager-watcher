@@ -1,9 +1,19 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-13T01:35:11Z",
+    "ts_utc": "2026-11-13T02:27:12Z",
     "ok": true,
-    "contacts": [],
+    "contacts": [
+      {
+        "spacecraft": "VGR1",
+        "dish": "DSS-43",
+        "station": "Canberra",
+        "signal_active": false,
+        "power_dbm": -480.0,
+        "band": "X",
+        "data_rate_bps": 0.0
+      }
+    ],
     "anomalous": []
   },
   "sent": [
@@ -29,6 +39,12 @@
       "event": "phnl_crosswind",
       "time_utc": "2026-11-13T00:19:19Z",
       "event_time_utc": "2026-11-13T00:00:00.000Z",
+      "delivered": true
+    },
+    {
+      "event": "voyager_acquired",
+      "time_utc": "2026-11-13T02:27:15Z",
+      "event_time_utc": "2026-11-13T02:27:12Z",
       "delivered": true
     }
   ],
