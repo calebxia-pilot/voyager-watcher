@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-13T03:22:53Z",
+    "ts_utc": "2026-11-13T04:25:36Z",
     "ok": true,
     "contacts": [
       {
@@ -9,9 +9,9 @@
         "dish": "DSS-43",
         "station": "Canberra",
         "signal_active": true,
-        "power_dbm": -150.0,
+        "power_dbm": -160.0,
         "band": "X",
-        "data_rate_bps": 160.0
+        "data_rate_bps": 142.2
       }
     ],
     "anomalous": []
