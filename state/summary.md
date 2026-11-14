@@ -1,12 +1,11 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-13 20:14 America/Edmonton (2026-11-14T02:14:45Z)
+Generated: 2026-11-13 21:08 America/Edmonton (2026-11-14T03:08:23Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
 
 ### Voyager 1 (VGR1)
-- DSS-43 (Canberra): 2026-11-12 20:27 America/Edmonton (2026-11-13T02:27:12Z); X-band 0 bps, -480 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-12 21:22 America/Edmonton (2026-11-13T03:22:53Z); X-band 160 bps, -150 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-12 22:25 America/Edmonton (2026-11-13T04:25:36Z); X-band 142.2 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-12 23:28 America/Edmonton (2026-11-13T05:28:38Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -38,11 +37,11 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-43 (Canberra): 2026-11-13 06:40 America/Edmonton (2026-11-13T12:40:57Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-13 07:56 America/Edmonton (2026-11-13T13:56:18Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-13 08:50 America/Edmonton (2026-11-13T14:50:56Z); X-band 160 bps, -160 dBm; 1 sample(s)
-- DSS-43 (Canberra): 2026-11-13 20:14 America/Edmonton (2026-11-14T02:14:39Z) → ongoing; X-band 160 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-13 20:14 America/Edmonton (2026-11-14T02:14:39Z); X-band 160 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-13 21:08 America/Edmonton (2026-11-14T03:08:16Z) → ongoing; X-band 160 bps, -160 dBm; 1 sample(s)
 
 ## Notable events
 
-- 2026-11-12 21:22 America/Edmonton (2026-11-13T03:22:53Z) — VGR1 signal acquired on DSS-43 (Canberra, X 160 bps, -150 dBm)
 - 2026-11-12 22:25 America/Edmonton (2026-11-13T04:25:36Z) — VGR1 power dip on DSS-43: -150 → -160 dBm (10.0 dB)
 - 2026-11-13 01:52 America/Edmonton (2026-11-13T07:52:25Z) — VGR1 signal lost on DSS-43
 - 2026-11-13 02:48 America/Edmonton (2026-11-13T08:48:28Z) — VGR1 new antenna on DSS-63 (Madrid, X 160 bps, -160 dBm)
@@ -62,17 +61,17 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-13 20:00 America/Edmonton (2026-11-14T02:00:00Z)
-Wind: 060° at 15 kt, gusting 27 kt
+Observed: 2026-11-13 21:00 America/Edmonton (2026-11-14T03:00:00Z)
+Wind: 090° at 13 kt, gusting 22 kt
 Visibility: 10+ SM
 Ceiling: 3500 ft
-Raw: `METAR PHNL 140153Z 06015G27KT 10SM FEW025 BKN035 27/18 A3004 RMK AO2 PK WND 05029/0055 SLP173 T02670178 $`
+Raw: `METAR PHNL 140253Z 09013G22KT 10SM FEW025 BKN035 26/18 A3006 RMK AO2 PK WND 07027/0243 SLP177 T02610183 53002 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 Gust values in parentheses.
 
-- 08R (080°): crosswind 5.1 kt from the left, headwind 14.1 kt (gust: 9.2 kt cross, HW 25.4 kt)
-- 26L (260°): crosswind 5.1 kt from the right, tailwind 14.1 kt (gust: 9.2 kt cross, TW 25.4 kt)
-- 04R (040°): crosswind 5.1 kt from the right, headwind 14.1 kt (gust: 9.2 kt cross, HW 25.4 kt)
-- 22L (220°): crosswind 5.1 kt from the left, tailwind 14.1 kt (gust: 9.2 kt cross, TW 25.4 kt)
+- 08R (080°): crosswind 2.3 kt from the right, headwind 12.8 kt (gust: 3.8 kt cross, HW 21.7 kt)
+- 26L (260°): crosswind 2.3 kt from the left, tailwind 12.8 kt (gust: 3.8 kt cross, TW 21.7 kt)
+- 04R (040°): crosswind 10 kt from the right, headwind 8.4 kt (gust: 16.9 kt cross, HW 14.1 kt)
+- 22L (220°): crosswind 10 kt from the left, tailwind 8.4 kt (gust: 16.9 kt cross, TW 14.1 kt)
