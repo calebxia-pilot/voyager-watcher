@@ -1,17 +1,17 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-14T05:40:51Z",
+    "ts_utc": "2026-11-14T06:32:52Z",
     "ok": true,
     "contacts": [
       {
         "spacecraft": "VGR2",
         "dish": "DSS-43",
         "station": "Canberra",
-        "signal_active": true,
-        "power_dbm": -160.0,
+        "signal_active": false,
+        "power_dbm": -170.0,
         "band": "X",
-        "data_rate_bps": 160.0
+        "data_rate_bps": 0.0
       }
     ],
     "anomalous": []
@@ -54,6 +54,11 @@
       "delivered": true
     }
   ],
-  "queue": null,
+  "queue": {
+    "event": "voyager_lost",
+    "detail": "VGR2 signal lost after a gap (was on DSS-43). No dish is tracking it in the latest DSN snapshot.",
+    "time_utc": "2026-11-14T06:32:52Z",
+    "detected_utc": "2026-11-14T06:32:58Z"
+  },
   "feed_down_since": null
 }
