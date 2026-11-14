@@ -1,9 +1,19 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-14T01:12:45Z",
+    "ts_utc": "2026-11-14T02:14:39Z",
     "ok": true,
-    "contacts": [],
+    "contacts": [
+      {
+        "spacecraft": "VGR2",
+        "dish": "DSS-43",
+        "station": "Canberra",
+        "signal_active": true,
+        "power_dbm": -160.0,
+        "band": "X",
+        "data_rate_bps": 160.0
+      }
+    ],
     "anomalous": []
   },
   "sent": [
@@ -35,6 +45,12 @@
       "event": "voyager_lost",
       "time_utc": "2026-11-13T15:36:45Z",
       "event_time_utc": "2026-11-13T15:36:42Z",
+      "delivered": true
+    },
+    {
+      "event": "voyager_acquired",
+      "time_utc": "2026-11-14T02:14:45Z",
+      "event_time_utc": "2026-11-14T02:14:39Z",
       "delivered": true
     }
   ],
