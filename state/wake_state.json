@@ -1,17 +1,17 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-15T07:25:18Z",
+    "ts_utc": "2026-11-15T08:24:10Z",
     "ok": true,
     "contacts": [
       {
         "spacecraft": "VGR1",
-        "dish": "DSS-43",
-        "station": "Canberra",
+        "dish": "DSS-63",
+        "station": "Madrid",
         "signal_active": true,
         "power_dbm": -160.0,
         "band": "X",
-        "data_rate_bps": 160.0
+        "data_rate_bps": 40.0
       }
     ],
     "anomalous": []
@@ -43,10 +43,10 @@
     }
   ],
   "queue": {
-    "event": "phnl_crosswind",
-    "detail": "PHNL crosswind component of 15 kt or more on 26L/08R. 08R (080°): 5.1 kt from the left; gust component 18 kt 26L (260°): 5.1 kt from the right; gust component 18 kt. wind 040° at 8 kt, gusting 28 kt. Raw: METAR PHNL 150553Z 04008G28KT 10SM FEW020 SCT030 BKN045 24/20 A3012 RMK AO2 PK WND 06028/0544 RAE23 SLP199 P0000 60000 T02390200 10272 20233 51010 $",
-    "time_utc": "2026-11-15T06:00:00.000Z",
-    "detected_utc": "2026-11-15T06:12:17Z"
+    "event": "unexpected_antenna",
+    "detail": "VGR1 unexpectedly appeared on DSS-63 (Madrid, X 40 bps, -160 dBm) while already tracked on DSS-43.",
+    "time_utc": "2026-11-15T08:24:10Z",
+    "detected_utc": "2026-11-15T08:24:20Z"
   },
   "feed_down_since": null
 }
