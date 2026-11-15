@@ -1,30 +1,22 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-15T02:23:52Z",
+    "ts_utc": "2026-11-15T03:16:18Z",
     "ok": true,
-    "contacts": [],
+    "contacts": [
+      {
+        "spacecraft": "VGR1",
+        "dish": "DSS-43",
+        "station": "Canberra",
+        "signal_active": true,
+        "power_dbm": -160.0,
+        "band": "X",
+        "data_rate_bps": 160.0
+      }
+    ],
     "anomalous": []
   },
   "sent": [
-    {
-      "event": "voyager_acquired",
-      "time_utc": "2026-11-12T18:23:32Z",
-      "event_time_utc": "2026-11-12T18:23:28Z",
-      "delivered": true
-    },
-    {
-      "event": "phnl_crosswind",
-      "time_utc": "2026-11-13T00:19:19Z",
-      "event_time_utc": "2026-11-13T00:00:00.000Z",
-      "delivered": true
-    },
-    {
-      "event": "voyager_acquired",
-      "time_utc": "2026-11-13T02:27:15Z",
-      "event_time_utc": "2026-11-13T02:27:12Z",
-      "delivered": true
-    },
     {
       "event": "voyager_lost",
       "time_utc": "2026-11-13T15:36:45Z",
@@ -41,6 +33,12 @@
       "event": "voyager_lost",
       "time_utc": "2026-11-14T13:22:25Z",
       "event_time_utc": "2026-11-14T06:32:52Z",
+      "delivered": true
+    },
+    {
+      "event": "voyager_acquired",
+      "time_utc": "2026-11-15T03:16:22Z",
+      "event_time_utc": "2026-11-15T03:16:18Z",
       "delivered": true
     }
   ],
