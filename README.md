@@ -22,7 +22,9 @@ GitHub can delay or skip scheduled runs under load, so the real cadence is "abou
 Raw URL for the summary:
 `https://raw.githubusercontent.com/calebxia-pilot/voyager-watcher/main/state/summary.md`
 
-The JSONL files and `wakes.log` are trimmed to the last 14 days on every cycle.
+The JSONL files and `wakes.log` are trimmed to the last 14 days on every cycle. Unparseable older lines are dropped, each file is capped at 8,000 lines, and rotated companions (`*.jsonl.YYYYMMDDTHHMMSSZ`) older than 14 days are deleted. Rotation itself now kicks in at 2 MB, not 50 MB, so a runaway file cannot bloat the repo.
+
+Network checks are also capped: if the last DSN sample is less than 4 minutes old, or 16 DSN samples have already been written in the last hour, the cycle skips the DSN and METAR fetches and only trims logs. A healthy every-5-minute schedule stays under both limits. The cap exists so a burst of delayed GitHub Actions runs cannot hammer the public feeds.
 
 ## Events
 

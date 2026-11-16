@@ -54,9 +54,14 @@ HTTP_TIMEOUT = 25
 
 DSN_INTERVAL_S = 5 * 60
 METAR_INTERVAL_S = 30 * 60
-LOG_ROTATE_BYTES = 50 * 1024 * 1024
-JSONL_ROTATE_BYTES = 50 * 1024 * 1024
+LOG_ROTATE_BYTES = 2 * 1024 * 1024
+JSONL_ROTATE_BYTES = 2 * 1024 * 1024
 RETENTION_DAYS = 14  # trim jsonl/wakes.log to this many days each cycle
+MAX_LOG_LINES = 8000  # backstop if timestamps are missing or retention lags
+# Cap network checks so a burst of delayed GitHub Actions runs cannot
+# hammer the public DSN/METAR feeds. A healthy */5 cron stays under both.
+MIN_CHECK_GAP_S = 4 * 60
+MAX_CHECKS_PER_HOUR = 16
 # Placeholder-feed heuristic: this many dishes or more, all parked at the
 # same az/el with the same activity text and no live target or signal.
 PLACEHOLDER_MIN_DISHES = 5
@@ -221,7 +226,12 @@ def rotate_if_huge(path: Path) -> None:
         stamp = utcnow().strftime("%Y%m%dT%H%M%SZ")
         dest = path.with_name(f"{path.name}.{stamp}")
         path.rename(dest)
-        log.info("rotated %s -> %s (exceeded 50 MB)", path.name, dest.name)
+        log.info(
+            "rotated %s -> %s (exceeded %d bytes)",
+            path.name,
+            dest.name,
+            JSONL_ROTATE_BYTES,
+        )
     except OSError as exc:
         log.warning("could not rotate %s: %s", path, exc)
 
@@ -1586,6 +1596,10 @@ def process_wakes(dsn: dict, metar: Optional[dict]) -> None:
 
 
 def cycle(do_metar: bool) -> None:
+    cap = check_cap_reason()
+    if cap:
+        log.info("check cap: skipping network fetch (%s)", cap)
+        return
     dsn = fetch_dsn()
     try:
         append_jsonl(DSN_JSONL, dsn)
@@ -1609,17 +1623,21 @@ def cycle(do_metar: bool) -> None:
 
 
 def trim_file(path: Path, cutoff: datetime, jsonl: bool) -> None:
-    """Drop lines older than cutoff so the repo stays small."""
+    """Drop lines older than cutoff so the repo stays small.
+
+    Lines with no timestamp are kept only if they are among the newest
+    20 raw lines (a truncated write might land there). Older unparseable
+    lines are dropped. A MAX_LOG_LINES cap is applied last as a backstop.
+    """
     if not path.exists():
         return
     try:
         lines = path.read_text(encoding="utf-8").splitlines()
     except OSError:
         return
-    kept = []
-    for line in lines:
-        if not line.strip():
-            continue
+    nonempty = [line for line in lines if line.strip()]
+    parsed = []
+    for line in nonempty:
         ts = None
         if jsonl:
             try:
@@ -1629,28 +1647,78 @@ def trim_file(path: Path, cutoff: datetime, jsonl: bool) -> None:
         else:
             m = re.search(r"\((\d{4}-\d\d-\d\dT\d\d:\d\d:\d\dZ)\)", line)
             ts = parse_iso(m.group(1)) if m else None
-        if ts is None or ts >= cutoff:
+        parsed.append((line, ts))
+    last_parsed_idx = max((i for i, (_, ts) in enumerate(parsed) if ts is not None), default=-1)
+    kept = []
+    for idx, (line, ts) in enumerate(parsed):
+        if ts is None:
+            # Keep only trailing unparseable lines (a truncated write at EOF).
+            if idx > last_parsed_idx:
+                kept.append(line)
+            continue
+        if ts >= cutoff:
             kept.append(line)
-    if len(kept) != len([l for l in lines if l.strip()]):
+    if len(kept) > MAX_LOG_LINES:
+        kept = kept[-MAX_LOG_LINES:]
+    if kept != nonempty:
         tmp = path.with_name(path.name + ".tmp")
         tmp.write_text("".join(l + "\n" for l in kept), encoding="utf-8")
         tmp.replace(path)
         log.info("trimmed %s to last %d days (%d lines kept)", path.name, RETENTION_DAYS, len(kept))
 
 
+def cleanup_rotated_siblings(path: Path, cutoff: datetime) -> None:
+    """Delete rotated companions older than cutoff (name.jsonl.YYYYMMDDTHHMMSSZ)."""
+    parent = path.parent
+    if not parent.exists():
+        return
+    prefix = path.name + "."
+    for sibling in parent.iterdir():
+        if not sibling.is_file() or not sibling.name.startswith(prefix):
+            continue
+        stamp = sibling.name[len(prefix):]
+        ts = None
+        try:
+            ts = datetime.strptime(stamp, "%Y%m%dT%H%M%SZ").replace(tzinfo=UTC)
+        except ValueError:
+            ts = None
+        if ts is None:
+            try:
+                ts = datetime.fromtimestamp(sibling.stat().st_mtime, UTC)
+            except OSError:
+                continue
+        if ts < cutoff:
+            try:
+                sibling.unlink()
+                log.info("removed rotated log %s (older than %d days)", sibling.name, RETENTION_DAYS)
+            except OSError as exc:
+                log.warning("could not remove %s: %s", sibling, exc)
+
+
 def trim_all() -> None:
     cutoff = utcnow() - timedelta(days=RETENTION_DAYS)
     for path in (DSN_JSONL, METAR_JSONL):
         trim_file(path, cutoff, jsonl=True)
+        cleanup_rotated_siblings(path, cutoff)
     trim_file(WAKES_LOG, cutoff, jsonl=False)
+    cleanup_rotated_siblings(WAKES_LOG, cutoff)
+    cleanup_rotated_siblings(LOG_PATH, cutoff)
+    # Leftover tmp files from a killed trim.
+    if DIR.exists():
+        for tmp in DIR.glob("*.tmp"):
+            try:
+                tmp.unlink()
+                log.info("removed leftover %s", tmp.name)
+            except OSError as exc:
+                log.warning("could not remove %s: %s", tmp, exc)
 
 
-def last_metar_time() -> Optional[datetime]:
-    if not METAR_JSONL.exists():
-        return None
-    last = None
+def jsonl_timestamps(path: Path) -> list[datetime]:
+    times: list[datetime] = []
+    if not path.exists():
+        return times
     try:
-        with METAR_JSONL.open("r", encoding="utf-8") as fh:
+        with path.open("r", encoding="utf-8") as fh:
             for line in fh:
                 line = line.strip()
                 if not line:
@@ -1661,10 +1729,40 @@ def last_metar_time() -> Optional[datetime]:
                     continue
                 ts = parse_iso(rec.get("ts_utc"))
                 if ts:
-                    last = ts
+                    times.append(ts)
     except OSError:
-        return None
-    return last
+        return times
+    return times
+
+
+def last_jsonl_time(path: Path) -> Optional[datetime]:
+    times = jsonl_timestamps(path)
+    return times[-1] if times else None
+
+
+def last_metar_time() -> Optional[datetime]:
+    return last_jsonl_time(METAR_JSONL)
+
+
+def check_cap_reason(now: Optional[datetime] = None) -> Optional[str]:
+    """Return a reason to skip network fetches, or None to proceed."""
+    now = now or utcnow()
+    last = last_jsonl_time(DSN_JSONL)
+    if last is not None:
+        age = (now - last).total_seconds()
+        if age < MIN_CHECK_GAP_S:
+            return (
+                f"last DSN check was {int(max(0, age))}s ago "
+                f"(min gap {MIN_CHECK_GAP_S}s)"
+            )
+    hour_ago = now - timedelta(hours=1)
+    recent = sum(1 for ts in jsonl_timestamps(DSN_JSONL) if ts >= hour_ago)
+    if recent >= MAX_CHECKS_PER_HOUR:
+        return (
+            f"already {recent} DSN check(s) in the last hour "
+            f"(cap {MAX_CHECKS_PER_HOUR})"
+        )
+    return None
 
 
 def main() -> int:
