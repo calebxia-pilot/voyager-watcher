@@ -18,6 +18,7 @@ GitHub can delay or skip scheduled runs under load, so the real cadence is "abou
 - `state/phnl_metar.jsonl`: one JSON object per METAR fetch.
 - `state/wakes.log`: every wake-hook decision (`sent`, `would_wake`, `queued`, `skipped`, `failed`, `dropped`).
 - `state/wake_state.json`: the baseline snapshot, recent wake history, any queued wake, and `feed_down_since`.
+- `state/sps_cache.json`: a short-lived cache of the public JPL SPS schedule, used to tell a planned pass from a surprise.
 
 Raw URL for the summary:
 `https://raw.githubusercontent.com/calebxia-pilot/voyager-watcher/main/state/summary.md`
@@ -33,6 +34,9 @@ Network checks are also capped: if the last DSN sample is less than 4 minutes ol
 - Events fire only on a *change* from a previous successful snapshot.
 - A failed fetch is never a signal loss.
 - **Placeholder feed = feed down.** Sometimes DSN Now serves a blank placeholder: every dish is parked at az 0 / el 90 with the same activity text, target `DSN`, and no signals. That cycle is recorded as `ok: false, feed_down: true`, the baseline is left untouched, and the summary shows "DSN feed down". When real data returns, the stale baseline isn't used to declare `voyager_lost` (nor power dips or unexpected antennas), because we can't know what happened during the outage.
+- **Locked samples only in the contacts list.** The 24-hour "Voyager contacts" section in `summary.md` counts a downlink only when DSN reports the signal active and the power is a real number (not the feed's -480/-470 dBm placeholder). A dish that is only pointed or in setup is not listed as a contact.
+- **Scheduled passes are not surprises.** Before waking on `voyager_acquired` or `voyager_lost`, the watcher checks the public [JPL SPS](https://spsweb.fltops.jpl.nasa.gov/) schedule. An acquire around a published beginning-of-track, or a loss around end-of-track, is skipped (logged as `skipped`). Off-schedule transitions still wake. If the schedule cannot be fetched and no cache is available, the filter fails open and the wake proceeds.
+- **Queued acquire/lost can be released.** If a `voyager_lost` (or `voyager_acquired`) is sitting in the quiet-hours queue and a later opposite event for the same spacecraft arrives before 07:00, the queued wake is dropped instead of being flushed stale.
 
 Payload:
 
@@ -69,6 +73,7 @@ If either is missing, events are logged as `would_wake` and nothing is POSTed. F
 python3 watcher.py --once                 # one cycle; METAR only if due
 python3 watcher.py --once --force-metar   # one cycle with METAR
 WATCHER_STATE_DIR=/tmp/state python3 watcher.py --once
+python3 test_watcher.py                  # unlocked-sample, queue-release, and SPS filter tests (no network)
 ```
 
 This uses only the Python standard library (3.9+).

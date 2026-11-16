@@ -68,6 +68,19 @@ PLACEHOLDER_MIN_DISHES = 5
 SESSION_GAP = timedelta(minutes=15)
 POWER_DIP_DB = 3.0
 CROSSWIND_WAKE_KT = 15.0
+
+# JPL SPS public schedule (planned passes, not live lock).
+SPS_URL = "https://spsweb.fltops.jpl.nasa.gov/rest/ops/info/activity/json"
+SPS_CACHE_PATH = DIR / "sps_cache.json"
+SPS_CACHE_MAX_AGE = timedelta(hours=3)
+SPS_ACQUIRE_BEFORE = timedelta(minutes=20)
+SPS_ACQUIRE_AFTER_BOT = timedelta(minutes=60)
+SPS_LOST_BEFORE_EOT = timedelta(minutes=60)
+SPS_LOST_AFTER = timedelta(minutes=20)
+OPPOSITE_LOCK_EVENTS = {
+    "voyager_lost": "voyager_acquired",
+    "voyager_acquired": "voyager_lost",
+}
 WAKE_MAX_PER_24H = 4
 WAKE_MIN_GAP = timedelta(hours=2)
 WAKE_SAME_TYPE_GAP = timedelta(hours=6)
@@ -684,6 +697,11 @@ def build_sessions(records: list[dict]) -> list[dict]:
             rate = sig.get("data_rate_bps")
             power = sig.get("power_dbm")
             active = bool(c.get("signal_active") or sig.get("active"))
+            # Unlocked / setup-only samples (active=false, or the -480/-470 dBm
+            # placeholder) are not contacts. Leaving them in the summary was
+            # making pointed-but-silent dishes look like a pass.
+            if not is_locked(active, power):
+                continue
             if key in open_sess:
                 sess = open_sess[key]
                 if ts - sess["end"] <= SESSION_GAP:
@@ -1426,6 +1444,240 @@ def deliver_or_would_wake(ev: dict, url: Optional[str], key: Optional[str], now:
     return "failed", f"webhook POST failed: {reason}"
 
 
+def event_spacecraft(detail: str) -> Optional[str]:
+    """Best-effort spacecraft id from a wake detail string (they start with VGR1/VGR2)."""
+    if not detail:
+        return None
+    token = detail.strip().split(" ", 1)[0]
+    return token if token in ("VGR1", "VGR2") else None
+
+
+def release_superseded_queue(state: dict, events: list[dict]) -> None:
+    """Drop a queued acquire/lost that a later opposite event has already overtaken.
+
+    Quiet-hours queue keeps only the highest-priority event, so a VGR2 *lost*
+    queued at 07:22 can still be sitting there after the spacecraft is acquired
+    again before 07:00. Flushing that stale lost would be a false wake.
+    """
+    queued = state.get("queue")
+    if not queued:
+        return
+    q_ev = queued.get("event")
+    opp = OPPOSITE_LOCK_EVENTS.get(q_ev or "")
+    if not opp:
+        return
+    q_sc = event_spacecraft(queued.get("detail") or "")
+    for ev in events:
+        if ev.get("event") != opp:
+            continue
+        if q_sc and event_spacecraft(ev.get("detail") or "") not in (q_sc, None):
+            continue
+        log_wake_decision(
+            "dropped",
+            q_ev,
+            queued.get("detail") or "",
+            f"queued {q_ev} superseded by later {opp}",
+            queued.get("time_utc"),
+        )
+        state["queue"] = None
+        return
+
+
+def parse_sps_time(s: Optional[str]) -> Optional[datetime]:
+    """Parse an SPS year-day timestamp like 2026-320T04:00:00 as UTC."""
+    if not s:
+        return None
+    m = re.match(r"^\s*(\d{4})-(\d{3})T(\d{2}):(\d{2}):(\d{2})\s*$", s)
+    if not m:
+        return parse_iso(s)
+    year, doy, hh, mm, ss = (int(x) for x in m.groups())
+    if doy < 1 or doy > 366:
+        return None
+    return datetime(year, 1, 1, hh, mm, ss, tzinfo=UTC) + timedelta(days=doy - 1)
+
+
+def format_sps_time(dt: datetime) -> str:
+    dt = dt.astimezone(UTC)
+    doy = dt.timetuple().tm_yday
+    return f"{dt.year}-{doy:03d}T{dt.strftime('%H:%M:%S')}"
+
+
+def _sps_items_from_payload(payload: Any) -> list[dict]:
+    if not isinstance(payload, dict):
+        return []
+    result = payload.get("result") or payload
+    items = result.get("item") if isinstance(result, dict) else None
+    if items is None:
+        return []
+    if isinstance(items, dict):
+        items = [items]
+    return [it for it in items if isinstance(it, dict)]
+
+
+def normalize_sps_passes(items: list[dict]) -> list[dict]:
+    passes = []
+    for it in items:
+        sc = normalize_spacecraft(it.get("projuser") or it.get("mission"))
+        fac = it.get("facility")
+        try:
+            dish = f"DSS-{int(fac)}" if fac is not None else None
+        except (TypeError, ValueError):
+            dish = None
+        bot = parse_sps_time(it.get("bot"))
+        start = parse_sps_time(it.get("starttime")) or bot
+        eot = parse_sps_time(it.get("eot"))
+        end = parse_sps_time(it.get("endtime")) or eot
+        if not sc or not (bot or eot or start):
+            continue
+        passes.append(
+            {
+                "spacecraft": sc,
+                "dish": dish,
+                "activity": (it.get("activity") or "").strip() or None,
+                "start": start,
+                "bot": bot,
+                "eot": eot,
+                "end": end,
+            }
+        )
+    return passes
+
+
+def scheduled_lock_reason(ev: dict, passes: list[dict]) -> Optional[str]:
+    """If this acquire/lost sits on a published SPS pass, return a skip reason."""
+    ev_name = ev.get("event")
+    if ev_name not in ("voyager_lost", "voyager_acquired"):
+        return None
+    sc = event_spacecraft(ev.get("detail") or "")
+    t = parse_iso(ev.get("time_utc"))
+    if not sc or t is None or not passes:
+        return None
+    for p in passes:
+        if p.get("spacecraft") != sc:
+            continue
+        dish = p.get("dish") or "a DSN dish"
+        if ev_name == "voyager_acquired":
+            start = p.get("start") or p.get("bot")
+            bot = p.get("bot") or p.get("start")
+            if start and bot and (start - SPS_ACQUIRE_BEFORE) <= t <= (bot + SPS_ACQUIRE_AFTER_BOT):
+                when = iso(bot) or iso(start)
+                return f"scheduled {sc} pass on {dish} (BOT {when}); not a surprise acquire"
+        else:
+            eot = p.get("eot")
+            end = p.get("end") or eot
+            if eot and end and (eot - SPS_LOST_BEFORE_EOT) <= t <= (end + SPS_LOST_AFTER):
+                when = iso(eot) or iso(end)
+                return f"scheduled {sc} pass on {dish} (EOT {when}); not a surprise loss"
+    return None
+
+
+def load_sps_cache() -> Optional[dict]:
+    if not SPS_CACHE_PATH.exists():
+        return None
+    try:
+        data = json.loads(SPS_CACHE_PATH.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def save_sps_cache(cache: dict) -> None:
+    try:
+        DIR.mkdir(parents=True, exist_ok=True)
+        tmp = SPS_CACHE_PATH.with_suffix(".json.tmp")
+        tmp.write_text(json.dumps(cache, indent=1) + "\n", encoding="utf-8")
+        tmp.replace(SPS_CACHE_PATH)
+    except OSError as exc:
+        log.warning("could not write SPS cache: %s", exc)
+
+
+def fetch_sps_items(mission: str, start: datetime, end: datetime) -> Optional[list[dict]]:
+    params = (
+        f"mission={mission}"
+        f"&startTime={format_sps_time(start)}"
+        f"&endTime={format_sps_time(end)}"
+    )
+    url = f"{SPS_URL}?{params}"
+    try:
+        raw = http_get(url)
+        payload = json.loads(raw.decode("utf-8"))
+    except (OSError, TimeoutError, json.JSONDecodeError, UnicodeDecodeError, ValueError) as exc:
+        log.warning("SPS schedule fetch failed for %s: %s", mission, exc)
+        return None
+    return _sps_items_from_payload(payload)
+
+
+def load_sps_passes(now: Optional[datetime] = None, missions: tuple[str, ...] = ("VGR1", "VGR2")) -> Optional[list[dict]]:
+    """Return normalized SPS passes, or None if the schedule could not be loaded.
+
+    A stale-but-valid cache is used if it still covers [now-6h, now+18h].
+    Fail open: callers treat None as "do not suppress wakes."
+    """
+    now = now or utcnow()
+    need_start = now - timedelta(hours=6)
+    need_end = now + timedelta(hours=18)
+    cache = load_sps_cache()
+    fetched_at = parse_iso((cache or {}).get("fetched_utc"))
+    cache_start = parse_sps_time((cache or {}).get("start")) or parse_iso((cache or {}).get("start"))
+    cache_end = parse_sps_time((cache or {}).get("end")) or parse_iso((cache or {}).get("end"))
+    fresh = (
+        cache is not None
+        and fetched_at is not None
+        and now - fetched_at <= SPS_CACHE_MAX_AGE
+        and cache_start is not None
+        and cache_end is not None
+        and cache_start <= need_start
+        and cache_end >= need_end
+    )
+    if fresh:
+        return normalize_sps_passes(cache.get("items") or [])
+
+    items: list[dict] = []
+    for mission in missions:
+        chunk = fetch_sps_items(mission, need_start, need_end)
+        if chunk is None:
+            # Keep a still-valid older cache rather than failing the cycle.
+            if cache and (cache.get("items") is not None):
+                log.info("SPS fetch failed; using cached schedule from %s", cache.get("fetched_utc"))
+                return normalize_sps_passes(cache.get("items") or [])
+            return None
+        items.extend(chunk)
+    save_sps_cache(
+        {
+            "fetched_utc": iso(now),
+            "start": format_sps_time(need_start),
+            "end": format_sps_time(need_end),
+            "items": items,
+        }
+    )
+    return normalize_sps_passes(items)
+
+
+def filter_scheduled_lock_events(events: list[dict], now: Optional[datetime] = None) -> list[dict]:
+    """Drop acquired/lost events that match a published SPS pass. Fail open."""
+    lock_events = [e for e in events if e.get("event") in ("voyager_lost", "voyager_acquired")]
+    if not lock_events:
+        return events
+    passes = load_sps_passes(now or utcnow())
+    if passes is None:
+        log.info("SPS schedule unavailable; not suppressing acquired/lost wakes")
+        return events
+    kept = []
+    for ev in events:
+        reason = scheduled_lock_reason(ev, passes)
+        if reason:
+            log_wake_decision(
+                "skipped",
+                ev.get("event") or "",
+                ev.get("detail") or "",
+                reason,
+                ev.get("time_utc"),
+            )
+            continue
+        kept.append(ev)
+    return kept
+
+
 def process_wakes(dsn: dict, metar: Optional[dict]) -> None:
     now = utcnow()
     url, key = load_webhook_config()
@@ -1456,6 +1708,26 @@ def process_wakes(dsn: dict, metar: Optional[dict]) -> None:
     # is not recorded as "Voyager disappeared."
     if dsn.get("ok"):
         state["last_dsn"] = snapshot_dsn(dsn)
+
+    # Drop a queued acquire/lost that a later opposite event has already overtaken.
+    release_superseded_queue(state, events)
+
+    # Scheduled SPS start/stop is not a surprise; only wake off-schedule.
+    # If the schedule cannot be loaded, events pass through unchanged.
+    events = filter_scheduled_lock_events(events, now)
+    queued = state.get("queue")
+    if queued and queued.get("event") in ("voyager_lost", "voyager_acquired"):
+        passes = load_sps_passes(now)
+        reason = scheduled_lock_reason(queued, passes or [])
+        if reason:
+            log_wake_decision(
+                "dropped",
+                queued.get("event") or "",
+                queued.get("detail") or "",
+                reason,
+                queued.get("time_utc"),
+            )
+            state["queue"] = None
 
     # Flush a wake queued during quiet hours (10 PM–7 AM America/Edmonton)
     # on the first cycle at or after 07:00.
