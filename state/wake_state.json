@@ -1,15 +1,33 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-16T03:45:49Z",
+    "ts_utc": "2026-11-16T05:12:50Z",
     "ok": true,
     "contacts": [
       {
         "spacecraft": "VGR1",
         "dish": "DSS-43",
         "station": "Canberra",
-        "signal_active": false,
-        "power_dbm": -480.0,
+        "signal_active": true,
+        "power_dbm": -160.0,
+        "band": "X",
+        "data_rate_bps": 40.0
+      },
+      {
+        "spacecraft": "VGR2",
+        "dish": "DSS-34",
+        "station": "Canberra",
+        "signal_active": true,
+        "power_dbm": -160.0,
+        "band": "X",
+        "data_rate_bps": 160.0
+      },
+      {
+        "spacecraft": "VGR2",
+        "dish": "DSS-36",
+        "station": "Canberra",
+        "signal_active": true,
+        "power_dbm": -170.0,
         "band": "X",
         "data_rate_bps": 0.0
       }
@@ -48,6 +66,11 @@
       "delivered": true
     }
   ],
-  "queue": null,
+  "queue": {
+    "event": "voyager_acquired",
+    "detail": "VGR1 signal acquired after a gap on DSS-43 (Canberra, X 40 bps, -160 dBm).",
+    "time_utc": "2026-11-16T05:12:50Z",
+    "detected_utc": "2026-11-16T05:12:54Z"
+  },
   "feed_down_since": null
 }
