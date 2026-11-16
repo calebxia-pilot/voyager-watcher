@@ -1,30 +1,12 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-16T12:04:15Z",
+    "ts_utc": "2026-11-16T15:09:20Z",
     "ok": true,
     "contacts": [],
     "anomalous": []
   },
   "sent": [
-    {
-      "event": "voyager_lost",
-      "time_utc": "2026-11-13T15:36:45Z",
-      "event_time_utc": "2026-11-13T15:36:42Z",
-      "delivered": true
-    },
-    {
-      "event": "voyager_acquired",
-      "time_utc": "2026-11-14T02:14:45Z",
-      "event_time_utc": "2026-11-14T02:14:39Z",
-      "delivered": true
-    },
-    {
-      "event": "voyager_lost",
-      "time_utc": "2026-11-14T13:22:25Z",
-      "event_time_utc": "2026-11-14T06:32:52Z",
-      "delivered": true
-    },
     {
       "event": "voyager_acquired",
       "time_utc": "2026-11-15T03:16:22Z",
@@ -36,13 +18,14 @@
       "time_utc": "2026-11-15T13:13:32Z",
       "event_time_utc": "2026-11-15T12:12:13Z",
       "delivered": true
+    },
+    {
+      "event": "voyager_lost",
+      "time_utc": "2026-11-16T15:09:24Z",
+      "event_time_utc": "2026-11-16T09:29:59Z",
+      "delivered": true
     }
   ],
-  "queue": {
-    "event": "voyager_lost",
-    "detail": "VGR1 signal lost after a gap (was on DSS-43). No dish is tracking it in the latest DSN snapshot.",
-    "time_utc": "2026-11-16T09:29:59Z",
-    "detected_utc": "2026-11-16T09:30:02Z"
-  },
+  "queue": null,
   "feed_down_since": null
 }
