@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-17 11:40 America/Edmonton (2026-11-17T17:40:38Z)
+Generated: 2026-11-17 12:34 America/Edmonton (2026-11-17T18:34:53Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -30,33 +30,33 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 ## Offline / anomalous dishes (latest snapshot)
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
-- DSS-23 (Goldstone): offline — Engineering Upgrades
 - DSS-24 (Goldstone): offline — Engineering Upgrades
-- DSS-26 (Goldstone): offline — Engineering Upgrades
 - DSS-25 (Goldstone): offline — Engineering Upgrades
+- DSS-23 (Goldstone): offline — Engineering Upgrades
+- DSS-26 (Goldstone): offline — Engineering Upgrades
 - DSS-55 (Madrid): offline — Engineering Upgrades
 - DSS-54 (Madrid): offline — Engineering Upgrades
-- DSS-65 (Madrid): offline — Engineering Upgrades
-- DSS-56 (Madrid): offline — Engineering Upgrades
-- DSS-53 (Madrid): offline — Engineering Upgrades
 - DSS-63 (Madrid): offline — Engineering Upgrades
-- DSS-34 (Canberra): offline — Engineering Upgrades
-- DSS-43 (Canberra): offline — Engineering Upgrades
+- DSS-53 (Madrid): offline — Engineering Upgrades
+- DSS-56 (Madrid): offline — Engineering Upgrades
+- DSS-65 (Madrid): offline — Engineering Upgrades
 - DSS-36 (Canberra): offline — Engineering Upgrades
 - DSS-35 (Canberra): offline — Engineering Upgrades
+- DSS-43 (Canberra): offline — Engineering Upgrades
+- DSS-34 (Canberra): offline — Engineering Upgrades
 
 ## Latest PHNL wind
 
-Observed: 2026-11-17 11:00 America/Edmonton (2026-11-17T17:00:00Z)
-Wind: 070° at 7 kt
+Observed: 2026-11-17 12:00 America/Edmonton (2026-11-17T18:00:00Z)
+Wind: 060° at 7 kt
 Visibility: 10+ SM
-Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 171653Z 07007KT 10SM FEW025 SCT040 24/21 A3011 RMK AO2 SLP194 T02390206 $`
+Ceiling: 4500 ft
+Raw: `METAR PHNL 171753Z 06007KT 10SM -RA FEW024 SCT034 BKN045 24/21 A3012 RMK AO2 RAB00E21B51 SLP198 P0000 60000 T02440211 10244 20233 53008 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 1.2 kt from the left, headwind 6.9 kt
-- 26L (260°): crosswind 1.2 kt from the right, tailwind 6.9 kt
-- 04R (040°): crosswind 3.5 kt from the right, headwind 6.1 kt
-- 22L (220°): crosswind 3.5 kt from the left, tailwind 6.1 kt
+- 08R (080°): crosswind 2.4 kt from the left, headwind 6.6 kt
+- 26L (260°): crosswind 2.4 kt from the right, tailwind 6.6 kt
+- 04R (040°): crosswind 2.4 kt from the right, headwind 6.6 kt
+- 22L (220°): crosswind 2.4 kt from the left, tailwind 6.6 kt
