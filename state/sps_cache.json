@@ -1,28 +1,8 @@
 {
- "fetched_utc": "2026-11-17T06:49:13Z",
- "start": "2026-321T00:49:13",
- "end": "2026-322T00:49:13",
+ "fetched_utc": "2026-11-17T12:10:58Z",
+ "start": "2026-321T06:10:58",
+ "end": "2026-322T06:10:58",
  "items": [
-  {
-   "soecode": "A",
-   "week": 47,
-   "activity": "SCIENCE         ",
-   "year": 2026,
-   "bot": "2026-321T05:30:00",
-   "nib": " ",
-   "projuser": "VGR1",
-   "endtime": "2026-321T06:45:00",
-   "starttime": "2026-321T05:05:00",
-   "eot": "2026-321T06:30:00",
-   "version": 88,
-   "activitytype": "SSPA",
-   "wrkcat": "1A1",
-   "activityid": 12624723,
-   "scheduleitemid": 24481218,
-   "configcode": "N00K",
-   "facility": 43,
-   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
-  },
   {
    "soecode": "A",
    "week": 47,
@@ -62,6 +42,46 @@
    "configcode": "N00K",
    "facility": 43,
    "equipmentlist": "NMC,RRPB,TLPA,XHMT"
+  },
+  {
+   "soecode": "A",
+   "week": 47,
+   "activity": "ARY S PMPCAL    ",
+   "year": 2026,
+   "bot": "2026-322T03:30:00",
+   "nib": " ",
+   "projuser": "VGR2",
+   "endtime": "2026-322T08:05:00",
+   "starttime": "2026-322T03:05:00",
+   "eot": "2026-322T07:50:00",
+   "version": 88,
+   "activitytype": "ARRAY",
+   "wrkcat": "1A1",
+   "activityid": 11895150,
+   "scheduleitemid": 23686094,
+   "configcode": "N00K",
+   "facility": 36,
+   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
+  },
+  {
+   "soecode": "L",
+   "week": 47,
+   "activity": "ARY R36 PMPCAL  ",
+   "year": 2026,
+   "bot": "2026-322T03:30:00",
+   "nib": " ",
+   "projuser": "VGR2",
+   "endtime": "2026-322T08:05:00",
+   "starttime": "2026-322T03:05:00",
+   "eot": "2026-322T07:50:00",
+   "version": 88,
+   "activitytype": "ARRAY",
+   "wrkcat": "1A1",
+   "activityid": 11895150,
+   "scheduleitemid": 23515597,
+   "configcode": "R061",
+   "facility": 35,
+   "equipmentlist": "ARRAY,NMC,RRPB=2,TLPA=2,XHMT"
   }
  ]
 }
