@@ -1,28 +1,8 @@
 {
- "fetched_utc": "2026-11-19T13:46:48Z",
- "start": "2026-323T07:46:48",
- "end": "2026-324T07:46:48",
+ "fetched_utc": "2026-11-19T14:40:19Z",
+ "start": "2026-323T08:40:19",
+ "end": "2026-324T08:40:19",
  "items": [
-  {
-   "soecode": "A",
-   "week": 47,
-   "activity": "ONE LIGHT DAY   ",
-   "year": 2026,
-   "bot": "2026-323T09:00:00",
-   "nib": " ",
-   "projuser": "VGR1",
-   "endtime": "2026-323T19:35:00",
-   "starttime": "2026-323T08:35:00",
-   "eot": "2026-323T19:20:00",
-   "version": 96,
-   "activitytype": "SSPA",
-   "wrkcat": "1A1",
-   "activityid": 11971529,
-   "scheduleitemid": 23769241,
-   "configcode": "N00K",
-   "facility": 63,
-   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
-  },
   {
    "soecode": "D",
    "week": 47,
