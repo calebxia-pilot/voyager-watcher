@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-19 08:40 America/Edmonton (2026-11-19T14:40:19Z)
+Generated: 2026-11-19 09:40 America/Edmonton (2026-11-19T15:40:43Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -10,7 +10,8 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-63 (Madrid): 2026-11-19 04:21 America/Edmonton (2026-11-19T10:21:37Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-19 05:21 America/Edmonton (2026-11-19T11:21:34Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-19 06:23 America/Edmonton (2026-11-19T12:23:32Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-63 (Madrid): 2026-11-19 08:40 America/Edmonton (2026-11-19T14:40:15Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-19 08:40 America/Edmonton (2026-11-19T14:40:15Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-19 09:40 America/Edmonton (2026-11-19T15:40:38Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-34 (Canberra): 2026-11-19 02:05 America/Edmonton (2026-11-19T08:05:50Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -40,16 +41,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-19 08:00 America/Edmonton (2026-11-19T14:00:00Z)
-Wind: 040° at 7 kt
+Observed: 2026-11-19 09:00 America/Edmonton (2026-11-19T15:00:00Z)
+Wind: 050° at 8 kt
 Visibility: 10+ SM
-Ceiling: 6000 ft
-Raw: `METAR PHNL 191353Z 04007KT 10SM FEW025 SCT049 OVC060 24/16 A3004 RMK AO2 SLP172 T02440161 $`
+Ceiling: none (no BKN/OVC layer)
+Raw: `METAR PHNL 191453Z 05008KT 10SM FEW025 SCT048 SCT070 24/17 A3004 RMK AO2 SLP173 60000 T02390172 55002 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 4.5 kt from the left, headwind 5.4 kt
-- 26L (260°): crosswind 4.5 kt from the right, tailwind 5.4 kt
-- 04R (040°): no crosswind, headwind 7 kt
-- 22L (220°): no crosswind, tailwind 7 kt
+- 08R (080°): crosswind 4 kt from the left, headwind 6.9 kt
+- 26L (260°): crosswind 4 kt from the right, tailwind 6.9 kt
+- 04R (040°): crosswind 1.4 kt from the right, headwind 7.9 kt
+- 22L (220°): crosswind 1.4 kt from the left, tailwind 7.9 kt
