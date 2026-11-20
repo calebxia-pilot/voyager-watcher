@@ -1,28 +1,9 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-20T09:37:23Z",
+    "ts_utc": "2026-11-20T10:39:27Z",
     "ok": true,
-    "contacts": [
-      {
-        "spacecraft": "VGR2",
-        "dish": "DSS-35",
-        "station": "Canberra",
-        "signal_active": true,
-        "power_dbm": -170.0,
-        "band": "X",
-        "data_rate_bps": 0.0
-      },
-      {
-        "spacecraft": "VGR2",
-        "dish": "DSS-34",
-        "station": "Canberra",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 160.0
-      }
-    ],
+    "contacts": [],
     "anomalous": []
   },
   "sent": [
