@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-20T12:41:00Z",
+    "ts_utc": "2026-11-20T13:57:56Z",
     "ok": true,
     "contacts": [],
     "anomalous": []
@@ -18,13 +18,14 @@
       "time_utc": "2026-11-19T19:46:52Z",
       "event_time_utc": "2026-11-19T19:46:46Z",
       "delivered": true
+    },
+    {
+      "event": "voyager_lost",
+      "time_utc": "2026-11-20T13:58:09Z",
+      "event_time_utc": "2026-11-20T06:05:48Z",
+      "delivered": true
     }
   ],
-  "queue": {
-    "event": "voyager_lost",
-    "detail": "VGR1 signal lost after a gap (was on DSS-43). No dish is tracking it in the latest DSN snapshot.",
-    "time_utc": "2026-11-20T06:05:48Z",
-    "detected_utc": "2026-11-20T06:05:53Z"
-  },
+  "queue": null,
   "feed_down_since": null
 }
