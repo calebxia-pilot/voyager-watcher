@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:40Z)
+Generated: 2026-11-21 08:52 America/Edmonton (2026-11-21T14:52:52Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -9,9 +9,12 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-54 (Madrid): 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z); X-band 0 bps, -170 dBm; 1 sample(s)
 - DSS-53 (Madrid): 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-65 (Madrid): 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z); X-band 0 bps, -170 dBm; 1 sample(s)
-- DSS-54 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z) → ongoing; X-band 0 bps, -170 dBm; 1 sample(s)
-- DSS-53 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-65 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z) → ongoing; X-band 0 bps, -170 dBm; 1 sample(s)
+- DSS-54 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z); X-band 0 bps, -170 dBm; 1 sample(s)
+- DSS-53 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-65 (Madrid): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z); X-band 0 bps, -170 dBm; 1 sample(s)
+- DSS-54 (Madrid): 2026-11-21 08:52 America/Edmonton (2026-11-21T14:52:42Z) → ongoing; X-band 0 bps, -170 dBm; 1 sample(s)
+- DSS-53 (Madrid): 2026-11-21 08:52 America/Edmonton (2026-11-21T14:52:42Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-65 (Madrid): 2026-11-21 08:52 America/Edmonton (2026-11-21T14:52:42Z) → ongoing; X-band 0 bps, -170 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-20 17:57 America/Edmonton (2026-11-20T23:57:46Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -24,7 +27,7 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-43 (Canberra): 2026-11-21 05:20 America/Edmonton (2026-11-21T11:20:17Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 06:06 America/Edmonton (2026-11-21T12:06:38Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z); X-band 160 bps, -160 dBm; 1 sample(s)
-- DSS-43 (Canberra): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z) → ongoing; X-band 160 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z); X-band 160 bps, -160 dBm; 1 sample(s)
 
 ## Notable events
 
@@ -34,6 +37,7 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-53 (Madrid, X 40 bps, -160 dBm)
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-54 (Madrid, X 0 bps, -170 dBm)
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-65 (Madrid, X 0 bps, -170 dBm)
+- 2026-11-21 08:52 America/Edmonton (2026-11-21T14:52:42Z) — VGR2 signal lost on DSS-43
 
 ## Offline / anomalous dishes (latest snapshot)
 
