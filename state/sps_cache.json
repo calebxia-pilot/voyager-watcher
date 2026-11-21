@@ -1,7 +1,7 @@
 {
- "fetched_utc": "2026-11-21T04:53:54Z",
- "start": "2026-324T22:53:54",
- "end": "2026-325T22:53:54",
+ "fetched_utc": "2026-11-21T09:36:56Z",
+ "start": "2026-325T03:36:56",
+ "end": "2026-326T03:36:56",
  "items": [
   {
    "soecode": "A",
@@ -66,19 +66,19 @@
   {
    "soecode": "A",
    "week": 47,
-   "activity": "BLF D/L         ",
+   "activity": "CMD D/L         ",
    "year": 2026,
-   "bot": "2026-324T23:35:00",
+   "bot": "2026-326T00:10:00",
    "nib": " ",
-   "projuser": "VGR2",
-   "endtime": "2026-325T05:10:00",
-   "starttime": "2026-324T23:10:00",
-   "eot": "2026-325T04:50:00",
+   "projuser": "VGR1",
+   "endtime": "2026-326T04:25:00",
+   "starttime": "2026-325T23:45:00",
+   "eot": "2026-326T04:10:00",
    "version": 103,
    "activitytype": "SSPA",
    "wrkcat": "1A1",
-   "activityid": 11899741,
-   "scheduleitemid": 23691132,
+   "activityid": 11738638,
+   "scheduleitemid": 23515574,
    "configcode": "N00K",
    "facility": 43,
    "equipmentlist": "NMC,RRPB,TLPA,XHMT"
