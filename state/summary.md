@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-21 19:56 America/Edmonton (2026-11-22T01:56:51Z)
+Generated: 2026-11-21 20:51 America/Edmonton (2026-11-22T02:51:30Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -22,10 +22,10 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-53 (Madrid): 2026-11-21 10:24 America/Edmonton (2026-11-21T16:24:49Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-65 (Madrid): 2026-11-21 10:24 America/Edmonton (2026-11-21T16:24:49Z); X-band 0 bps, -170 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 18:50 America/Edmonton (2026-11-22T00:50:22Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-43 (Canberra): 2026-11-21 19:56 America/Edmonton (2026-11-22T01:56:46Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-21 19:56 America/Edmonton (2026-11-22T01:56:46Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-21 20:51 America/Edmonton (2026-11-22T02:51:24Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
-- DSS-43 (Canberra): 2026-11-20 20:14 America/Edmonton (2026-11-21T02:14:10Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-20 21:05 America/Edmonton (2026-11-21T03:05:43Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-20 21:56 America/Edmonton (2026-11-21T03:56:50Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 03:36 America/Edmonton (2026-11-21T09:36:49Z); X-band 160 bps, -160 dBm; 1 sample(s)
