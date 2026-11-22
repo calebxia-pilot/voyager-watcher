@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-22 02:48 America/Edmonton (2026-11-22T08:48:47Z)
+Generated: 2026-11-22 03:35 America/Edmonton (2026-11-22T09:35:39Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -36,7 +36,6 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Notable events
 
-- 2026-11-21 03:36 America/Edmonton (2026-11-21T09:36:49Z) — VGR2 signal acquired on DSS-43 (Canberra, X 160 bps, -160 dBm)
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-53 (Madrid, X 40 bps, -160 dBm)
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-54 (Madrid, X 0 bps, -170 dBm)
 - 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z) — VGR1 signal acquired on DSS-65 (Madrid, X 0 bps, -170 dBm)
@@ -54,16 +53,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-22 02:00 America/Edmonton (2026-11-22T08:00:00Z)
-Wind: 070° at 13 kt
+Observed: 2026-11-22 03:00 America/Edmonton (2026-11-22T09:00:00Z)
+Wind: 020° at 6 kt
 Visibility: 10+ SM
-Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 220753Z 07013KT 10SM FEW025 SCT040 24/18 A3013 RMK AO2 SLP201 T02440178 $`
+Ceiling: 4400 ft
+Raw: `METAR PHNL 220853Z 02006KT 10SM FEW025 SCT035 BKN044 24/18 A3012 RMK AO2 SLP200 T02390178 50004 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 2.3 kt from the left, headwind 12.8 kt
-- 26L (260°): crosswind 2.3 kt from the right, tailwind 12.8 kt
-- 04R (040°): crosswind 6.5 kt from the right, headwind 11.3 kt
-- 22L (220°): crosswind 6.5 kt from the left, tailwind 11.3 kt
+- 08R (080°): crosswind 5.2 kt from the left, headwind 3 kt
+- 26L (260°): crosswind 5.2 kt from the right, tailwind 3 kt
+- 04R (040°): crosswind 2.1 kt from the left, headwind 5.6 kt
+- 22L (220°): crosswind 2.1 kt from the right, tailwind 5.6 kt
