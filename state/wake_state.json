@@ -1,56 +1,16 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-22T17:09:13Z",
+    "ts_utc": "2026-11-22T17:52:03Z",
     "ok": true,
-    "contacts": [
-      {
-        "spacecraft": "VGR1",
-        "dish": "DSS-53",
-        "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 40.0
-      },
-      {
-        "spacecraft": "VGR1",
-        "dish": "DSS-54",
-        "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 0.0
-      },
-      {
-        "spacecraft": "VGR1",
-        "dish": "DSS-65",
-        "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 0.0
-      }
-    ],
+    "contacts": [],
     "anomalous": []
   },
   "sent": [
     {
       "event": "voyager_lost",
-      "time_utc": "2026-11-19T13:46:48Z",
-      "event_time_utc": "2026-11-19T13:46:43Z",
-      "delivered": true
-    },
-    {
-      "event": "voyager_lost",
-      "time_utc": "2026-11-19T19:46:52Z",
-      "event_time_utc": "2026-11-19T19:46:46Z",
-      "delivered": true
-    },
-    {
-      "event": "voyager_lost",
-      "time_utc": "2026-11-20T13:58:09Z",
-      "event_time_utc": "2026-11-20T06:05:48Z",
+      "time_utc": "2026-11-22T17:52:09Z",
+      "event_time_utc": "2026-11-22T17:52:03Z",
       "delivered": true
     }
   ],

@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:19Z)
+Generated: 2026-11-22 11:52 America/Edmonton (2026-11-22T17:52:09Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -22,9 +22,9 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-53 (Madrid): 2026-11-22 10:20 America/Edmonton (2026-11-22T16:20:27Z); X-band 40.04 bps, -160 dBm; 1 sample(s)
 - DSS-54 (Madrid): 2026-11-22 10:20 America/Edmonton (2026-11-22T16:20:27Z); X-band 0 bps, -160 dBm; 1 sample(s)
 - DSS-65 (Madrid): 2026-11-22 10:20 America/Edmonton (2026-11-22T16:20:27Z); X-band 0 bps, -160 dBm; 1 sample(s)
-- DSS-53 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-54 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z) → ongoing; X-band 0 bps, -160 dBm; 1 sample(s)
-- DSS-65 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z) → ongoing; X-band 0 bps, -160 dBm; 1 sample(s)
+- DSS-53 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-54 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z); X-band 0 bps, -160 dBm; 1 sample(s)
+- DSS-65 (Madrid): 2026-11-22 11:09 America/Edmonton (2026-11-22T17:09:13Z); X-band 0 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-22 05:17 America/Edmonton (2026-11-22T11:17:22Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -41,6 +41,9 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - 2026-11-22 07:54 America/Edmonton (2026-11-22T13:54:03Z) — VGR1 new antenna on DSS-54 (Madrid, X 0 bps, -160 dBm)
 - 2026-11-22 07:54 America/Edmonton (2026-11-22T13:54:03Z) — VGR1 new antenna on DSS-65 (Madrid, X 0 bps, -160 dBm)
 - 2026-11-22 08:42 America/Edmonton (2026-11-22T14:42:46Z) — VGR2 signal lost on DSS-43
+- 2026-11-22 11:52 America/Edmonton (2026-11-22T17:52:03Z) — VGR1 signal lost on DSS-53
+- 2026-11-22 11:52 America/Edmonton (2026-11-22T17:52:03Z) — VGR1 signal lost on DSS-54
+- 2026-11-22 11:52 America/Edmonton (2026-11-22T17:52:03Z) — VGR1 signal lost on DSS-65
 
 ## Offline / anomalous dishes (latest snapshot)
 
