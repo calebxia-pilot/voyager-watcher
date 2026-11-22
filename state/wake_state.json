@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-22T02:51:24Z",
+    "ts_utc": "2026-11-22T03:42:56Z",
     "ok": true,
     "contacts": [
       {
@@ -11,7 +11,7 @@
         "signal_active": true,
         "power_dbm": -160.0,
         "band": "X",
-        "data_rate_bps": 40.0
+        "data_rate_bps": 158.9
       }
     ],
     "anomalous": []
