@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-22 05:17 America/Edmonton (2026-11-22T11:17:25Z)
+Generated: 2026-11-22 06:01 America/Edmonton (2026-11-22T12:01:42Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -27,11 +27,11 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-43 (Canberra): 2026-11-21 21:42 America/Edmonton (2026-11-22T03:42:56Z); X-band 158.9 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
-- DSS-43 (Canberra): 2026-11-21 05:20 America/Edmonton (2026-11-21T11:20:17Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 06:06 America/Edmonton (2026-11-21T12:06:38Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 07:01 America/Edmonton (2026-11-21T13:01:46Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-21 08:00 America/Edmonton (2026-11-21T14:00:34Z); X-band 160 bps, -160 dBm; 1 sample(s)
-- DSS-43 (Canberra): 2026-11-22 05:17 America/Edmonton (2026-11-22T11:17:22Z) → ongoing; X-band 160 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-22 05:17 America/Edmonton (2026-11-22T11:17:22Z); X-band 160 bps, -160 dBm; 1 sample(s)
+- DSS-43 (Canberra): 2026-11-22 06:01 America/Edmonton (2026-11-22T12:01:33Z) → ongoing; X-band 160 bps, -160 dBm; 1 sample(s)
 
 ## Notable events
 
@@ -53,17 +53,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-22 05:00 America/Edmonton (2026-11-22T11:00:00Z)
-Wind: 060° at 11 kt, gusting 20 kt
+Observed: 2026-11-22 06:00 America/Edmonton (2026-11-22T12:00:00Z)
+Wind: 060° at 10 kt
 Visibility: 10+ SM
-Ceiling: 5000 ft
-Raw: `METAR PHNL 221053Z 06011G20KT 10SM FEW030 BKN050 24/17 A3010 RMK AO2 SLP193 T02440172 $`
+Ceiling: none (no BKN/OVC layer)
+Raw: `METAR PHNL 221153Z 06010KT 10SM FEW025 SCT050 24/18 A3008 RMK AO2 SLP186 70001 T02390178 10244 20233 58014 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
-Gust values in parentheses.
 
-- 08R (080°): crosswind 3.8 kt from the left, headwind 10.3 kt (gust: 6.8 kt cross, HW 18.8 kt)
-- 26L (260°): crosswind 3.8 kt from the right, tailwind 10.3 kt (gust: 6.8 kt cross, TW 18.8 kt)
-- 04R (040°): crosswind 3.8 kt from the right, headwind 10.3 kt (gust: 6.8 kt cross, HW 18.8 kt)
-- 22L (220°): crosswind 3.8 kt from the left, tailwind 10.3 kt (gust: 6.8 kt cross, TW 18.8 kt)
+- 08R (080°): crosswind 3.4 kt from the left, headwind 9.4 kt
+- 26L (260°): crosswind 3.4 kt from the right, tailwind 9.4 kt
+- 04R (040°): crosswind 3.4 kt from the right, headwind 9.4 kt
+- 22L (220°): crosswind 3.4 kt from the left, tailwind 9.4 kt
