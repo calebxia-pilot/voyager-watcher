@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-23T02:42:10Z",
+    "ts_utc": "2026-11-23T03:42:18Z",
     "ok": true,
     "contacts": [
       {
@@ -21,6 +21,12 @@
       "event": "voyager_lost",
       "time_utc": "2026-11-22T17:52:09Z",
       "event_time_utc": "2026-11-22T17:52:03Z",
+      "delivered": true
+    },
+    {
+      "event": "phnl_crosswind",
+      "time_utc": "2026-11-23T03:42:21Z",
+      "event_time_utc": "2026-11-23T03:00:00.000Z",
       "delivered": true
     }
   ],
