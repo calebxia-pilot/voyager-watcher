@@ -1,7 +1,7 @@
 {
- "fetched_utc": "2026-11-24T18:03:56Z",
- "start": "2026-328T12:03:56",
- "end": "2026-329T12:03:56",
+ "fetched_utc": "2026-11-24T20:07:09Z",
+ "start": "2026-328T14:07:09",
+ "end": "2026-329T14:07:09",
  "items": [
   {
    "soecode": "A",
@@ -14,7 +14,7 @@
    "endtime": "2026-328T19:20:00",
    "starttime": "2026-328T17:05:00",
    "eot": "2026-328T19:05:00",
-   "version": 91,
+   "version": 92,
    "activitytype": "SSPA",
    "wrkcat": "1A1",
    "activityid": 11935152,
@@ -34,7 +34,7 @@
    "endtime": "2026-329T12:45:00",
    "starttime": "2026-329T07:05:00",
    "eot": "2026-329T12:30:00",
-   "version": 91,
+   "version": 92,
    "activitytype": "SSPA",
    "wrkcat": "1A1",
    "activityid": 11894991,
@@ -54,7 +54,7 @@
    "endtime": "2026-329T15:40:00",
    "starttime": "2026-329T10:00:00",
    "eot": "2026-329T15:20:00",
-   "version": 91,
+   "version": 92,
    "activitytype": "SSPA",
    "wrkcat": "1A1",
    "activityid": 11765049,
