@@ -1,7 +1,7 @@
 {
- "fetched_utc": "2026-11-24T13:56:49Z",
- "start": "2026-328T07:56:49",
- "end": "2026-329T07:56:49",
+ "fetched_utc": "2026-11-24T16:04:58Z",
+ "start": "2026-328T10:04:58",
+ "end": "2026-329T10:04:58",
  "items": [
   {
    "soecode": "A",
@@ -59,6 +59,26 @@
    "wrkcat": "1A1",
    "activityid": 11765052,
    "scheduleitemid": 23544270,
+   "configcode": "N00K",
+   "facility": 43,
+   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
+  },
+  {
+   "soecode": "A",
+   "week": 48,
+   "activity": "SCIENCE         ",
+   "year": 2026,
+   "bot": "2026-329T10:25:00",
+   "nib": " ",
+   "projuser": "VGR2",
+   "endtime": "2026-329T15:40:00",
+   "starttime": "2026-329T10:00:00",
+   "eot": "2026-329T15:20:00",
+   "version": 91,
+   "activitytype": "SSPA",
+   "wrkcat": "1A1",
+   "activityid": 11765049,
+   "scheduleitemid": 23544263,
    "configcode": "N00K",
    "facility": 43,
    "equipmentlist": "NMC,RRPB,TLPA,XHMT"
