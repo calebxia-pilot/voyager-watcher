@@ -1,17 +1,17 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-24 11:10 America/Edmonton (2026-11-24T17:10:31Z)
+Generated: 2026-11-24 12:03 America/Edmonton (2026-11-24T18:03:56Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
 
 ### Voyager 1 (VGR1)
-- DSS-63 (Madrid): 2026-11-23 11:54 America/Edmonton (2026-11-23T17:54:00Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-23 12:52 America/Edmonton (2026-11-23T18:52:27Z); X-band 39.99 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-24 02:14 America/Edmonton (2026-11-24T08:14:11Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-24 03:32 America/Edmonton (2026-11-24T09:32:05Z); X-band 40.04 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-24 04:31 America/Edmonton (2026-11-24T10:31:47Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-24 05:29 America/Edmonton (2026-11-24T11:29:40Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-24 12:03 America/Edmonton (2026-11-24T18:03:50Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-24 05:29 America/Edmonton (2026-11-24T11:29:40Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -26,6 +26,7 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - 2026-11-24 05:29 America/Edmonton (2026-11-24T11:29:40Z) — VGR2 signal acquired on DSS-43 (Canberra, X 160 bps, -160 dBm)
 - 2026-11-24 06:34 America/Edmonton (2026-11-24T12:34:38Z) — VGR1 signal lost on DSS-63
 - 2026-11-24 10:04 America/Edmonton (2026-11-24T16:04:54Z) — VGR2 signal lost on DSS-43
+- 2026-11-24 12:03 America/Edmonton (2026-11-24T18:03:50Z) — VGR1 signal acquired on DSS-63 (Madrid, X 40 bps, -160 dBm)
 
 ## Offline / anomalous dishes (latest snapshot)
 
@@ -35,16 +36,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-24 11:00 America/Edmonton (2026-11-24T17:00:00Z)
-Wind: 000° at 0 kt
+Observed: 2026-11-24 12:00 America/Edmonton (2026-11-24T18:00:00Z)
+Wind: 350° at 4 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 241653Z 00000KT 10SM FEW026 20/17 A3004 RMK AO2 SLP170 T02000172 $`
+Raw: `METAR PHNL 241753Z 35004KT 10SM FEW025 22/18 A3005 RMK AO2 SLP175 T02170178 10228 20200 53012 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): no crosswind, headwind 0 kt
-- 26L (260°): no crosswind, headwind -0 kt
-- 04R (040°): no crosswind, headwind 0 kt
-- 22L (220°): no crosswind, headwind -0 kt
+- 08R (080°): crosswind 4 kt from the left, headwind -0 kt
+- 26L (260°): crosswind 4 kt from the right, headwind 0 kt
+- 04R (040°): crosswind 3.1 kt from the left, headwind 2.6 kt
+- 22L (220°): crosswind 3.1 kt from the right, tailwind 2.6 kt
