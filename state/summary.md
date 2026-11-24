@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-24 03:32 America/Edmonton (2026-11-24T09:32:10Z)
+Generated: 2026-11-24 04:31 America/Edmonton (2026-11-24T10:31:51Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -12,7 +12,8 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-63 (Madrid): 2026-11-23 11:54 America/Edmonton (2026-11-23T17:54:00Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-23 12:52 America/Edmonton (2026-11-23T18:52:27Z); X-band 39.99 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-24 02:14 America/Edmonton (2026-11-24T08:14:11Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-63 (Madrid): 2026-11-24 03:32 America/Edmonton (2026-11-24T09:32:05Z) → ongoing; X-band 40.04 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-24 03:32 America/Edmonton (2026-11-24T09:32:05Z); X-band 40.04 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-24 04:31 America/Edmonton (2026-11-24T10:31:47Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-23 06:21 America/Edmonton (2026-11-23T12:21:12Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -35,11 +36,11 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-24 03:00 America/Edmonton (2026-11-24T09:00:00Z)
+Observed: 2026-11-24 04:00 America/Edmonton (2026-11-24T10:00:00Z)
 Wind: 000° at 0 kt
 Visibility: 10+ SM
-Ceiling: 3500 ft
-Raw: `METAR PHNL 240853Z 00000KT 10SM FEW030 BKN035 23/17 A3007 RMK AO2 SLP182 T02330167 51007 $`
+Ceiling: 3700 ft
+Raw: `METAR PHNL 240953Z 00000KT 10SM FEW030 BKN037 23/17 A3006 RMK AO2 SLP179 T02330172 402830200 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
