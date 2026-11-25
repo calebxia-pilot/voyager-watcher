@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-24 18:42 America/Edmonton (2026-11-25T00:42:33Z)
+Generated: 2026-11-24 20:06 America/Edmonton (2026-11-25T02:06:12Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -36,16 +36,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-24 18:00 America/Edmonton (2026-11-25T00:00:00Z)
-Wind: 160° at 7 kt
+Observed: 2026-11-24 20:00 America/Edmonton (2026-11-25T02:00:00Z)
+Wind: 000° at 0 kt
 Visibility: 10+ SM
 Ceiling: 5000 ft
-Raw: `METAR PHNL 242353Z 16007KT 10SM FEW025 SCT043 BKN050 27/18 A2998 RMK AO2 SLP152 T02670178 10283 20217 58024 $`
+Raw: `METAR PHNL 250153Z 00000KT 10SM FEW025 SCT042 BKN050 27/16 A2997 RMK AO2 SLP147 T02670161 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 6.9 kt from the right, headwind 1.2 kt
-- 26L (260°): crosswind 6.9 kt from the left, tailwind 1.2 kt
-- 04R (040°): crosswind 6.1 kt from the right, tailwind 3.5 kt
-- 22L (220°): crosswind 6.1 kt from the left, headwind 3.5 kt
+- 08R (080°): no crosswind, headwind 0 kt
+- 26L (260°): no crosswind, headwind -0 kt
+- 04R (040°): no crosswind, headwind 0 kt
+- 22L (220°): no crosswind, headwind -0 kt
