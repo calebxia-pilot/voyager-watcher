@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-24 22:07 America/Edmonton (2026-11-25T04:07:37Z)
+Generated: 2026-11-24 23:19 America/Edmonton (2026-11-25T05:19:50Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -32,15 +32,14 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
 - DSS-55 (Madrid): offline — Engineering Upgrades
-- DSS-34 (Canberra): offline — Antenna Preventative Maintenance
 
 ## Latest PHNL wind
 
-Observed: 2026-11-24 22:00 America/Edmonton (2026-11-25T04:00:00Z)
+Observed: 2026-11-24 23:00 America/Edmonton (2026-11-25T05:00:00Z)
 Wind: 050° at 7 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 250353Z 05007KT 10SM FEW035 FEW042 24/17 A3000 RMK AO2 SLP157 T02440167 $`
+Raw: `METAR PHNL 250453Z 05007KT 10SM FEW036 23/16 A3001 RMK AO2 SLP161 T02330161 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
