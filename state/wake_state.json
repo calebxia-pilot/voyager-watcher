@@ -1,18 +1,9 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-25T12:17:48Z",
+    "ts_utc": "2026-11-25T13:45:44Z",
     "ok": true,
     "contacts": [
-      {
-        "spacecraft": "VGR1",
-        "dish": "DSS-63",
-        "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
-        "band": "X",
-        "data_rate_bps": 40.0
-      },
       {
         "spacecraft": "VGR2",
         "dish": "DSS-43",
@@ -26,12 +17,6 @@
     "anomalous": []
   },
   "sent": [
-    {
-      "event": "phnl_crosswind",
-      "time_utc": "2026-11-23T03:42:21Z",
-      "event_time_utc": "2026-11-23T03:00:00.000Z",
-      "delivered": true
-    },
     {
       "event": "voyager_lost",
       "time_utc": "2026-11-23T19:55:28Z",
@@ -54,6 +39,12 @@
       "event": "voyager_lost",
       "time_utc": "2026-11-24T20:07:09Z",
       "event_time_utc": "2026-11-24T20:07:04Z",
+      "delivered": true
+    },
+    {
+      "event": "voyager_lost",
+      "time_utc": "2026-11-25T13:45:51Z",
+      "event_time_utc": "2026-11-25T13:45:44Z",
       "delivered": true
     }
   ],
