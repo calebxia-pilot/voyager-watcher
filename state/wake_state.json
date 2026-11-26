@@ -1,7 +1,7 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-26T05:52:08Z",
+    "ts_utc": "2026-11-26T06:58:27Z",
     "ok": true,
     "contacts": [],
     "anomalous": []
@@ -38,6 +38,11 @@
       "delivered": true
     }
   ],
-  "queue": null,
+  "queue": {
+    "event": "phnl_crosswind",
+    "detail": "PHNL crosswind component of 15 kt or more on 26L/08R. 08R (080°): 14.8 kt from the left; gust component 26.6 kt 26L (260°): 14.8 kt from the right; gust component 26.6 kt. wind 340° at 15 kt, gusting 27 kt. Raw: METAR PHNL 260653Z 34015G27KT 10SM FEW028 BKN049 OVC075 22/18 A2989 RMK AO2 PK WND 36028/0606 WSHFT 0540 SLP123 T02170178 $",
+    "time_utc": "2026-11-26T07:00:00.000Z",
+    "detected_utc": "2026-11-26T06:58:31Z"
+  },
   "feed_down_since": null
 }
