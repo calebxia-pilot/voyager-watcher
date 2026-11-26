@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-26 14:28 America/Edmonton (2026-11-26T20:28:28Z)
+Generated: 2026-11-26 15:25 America/Edmonton (2026-11-26T21:25:32Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -40,20 +40,21 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
 - DSS-55 (Madrid): offline — Engineering Upgrades
+- DSS-35 (Canberra): offline — Antenna Preventative Maintenance
 
 ## Latest PHNL wind
 
-Observed: 2026-11-26 14:00 America/Edmonton (2026-11-26T20:00:00Z)
-Wind: 330° at 20 kt, gusting 31 kt
+Observed: 2026-11-26 15:00 America/Edmonton (2026-11-26T21:00:00Z)
+Wind: 330° at 22 kt, gusting 30 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 261953Z 33020G31KT 10SM FEW030 FEW050 22/14 A2996 RMK AO2 PK WND 34039/1931 SLP146 T02220139 $`
+Raw: `METAR PHNL 262053Z 33022G30KT 10SM FEW028 SCT060 23/13 A2994 RMK AO2 PK WND 33035/2038 RAB33E49 SLP139 P0000 60000 T02330128 50006 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 Gust values in parentheses.
 
-- 08R (080°): crosswind 18.8 kt from the left, tailwind 6.8 kt (gust: 29.1 kt cross, TW 10.6 kt)
-- 26L (260°): crosswind 18.8 kt from the right, headwind 6.8 kt (gust: 29.1 kt cross, HW 10.6 kt)
-- 04R (040°): crosswind 18.8 kt from the left, headwind 6.8 kt (gust: 29.1 kt cross, HW 10.6 kt)
-- 22L (220°): crosswind 18.8 kt from the right, tailwind 6.8 kt (gust: 29.1 kt cross, TW 10.6 kt)
+- 08R (080°): crosswind 20.7 kt from the left, tailwind 7.5 kt (gust: 28.2 kt cross, TW 10.3 kt)
+- 26L (260°): crosswind 20.7 kt from the right, headwind 7.5 kt (gust: 28.2 kt cross, HW 10.3 kt)
+- 04R (040°): crosswind 20.7 kt from the left, headwind 7.5 kt (gust: 28.2 kt cross, HW 10.3 kt)
+- 22L (220°): crosswind 20.7 kt from the right, tailwind 7.5 kt (gust: 28.2 kt cross, TW 10.3 kt)
