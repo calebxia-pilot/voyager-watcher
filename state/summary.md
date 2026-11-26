@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-25 18:24 America/Edmonton (2026-11-26T00:24:57Z)
+Generated: 2026-11-25 19:52 America/Edmonton (2026-11-26T01:52:34Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -28,22 +28,23 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 ## Offline / anomalous dishes (latest snapshot)
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
+- DSS-25 (Goldstone): offline — Antenna Calibration
 - DSS-55 (Madrid): offline — Engineering Upgrades
 - DSS-65 (Madrid): offline — Antenna Calibration
 - DSS-36 (Canberra): offline — Antenna Preventative Maintenance
 
 ## Latest PHNL wind
 
-Observed: 2026-11-25 18:00 America/Edmonton (2026-11-26T00:00:00Z)
-Wind: 230° at 11 kt
+Observed: 2026-11-25 19:00 America/Edmonton (2026-11-26T01:00:00Z)
+Wind: 240° at 15 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 252353Z 23011KT 10SM FEW025 FEW040 27/17 A2986 RMK AO2 SLP112 T02720167 10278 20206 56037 $`
+Raw: `METAR PHNL 260053Z 24015KT 10SM FEW028 SCT040 27/18 A2984 RMK AO2 SLP106 T02720178 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 5.5 kt from the right, tailwind 9.5 kt
-- 26L (260°): crosswind 5.5 kt from the left, headwind 9.5 kt
-- 04R (040°): crosswind 1.9 kt from the left, tailwind 10.8 kt
-- 22L (220°): crosswind 1.9 kt from the right, headwind 10.8 kt
+- 08R (080°): crosswind 5.1 kt from the right, tailwind 14.1 kt
+- 26L (260°): crosswind 5.1 kt from the left, headwind 14.1 kt
+- 04R (040°): crosswind 5.1 kt from the left, tailwind 14.1 kt
+- 22L (220°): crosswind 5.1 kt from the right, headwind 14.1 kt
