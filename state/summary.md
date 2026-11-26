@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-26 12:19 America/Edmonton (2026-11-26T18:19:27Z)
+Generated: 2026-11-26 13:28 America/Edmonton (2026-11-26T19:28:42Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -14,7 +14,7 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-65 (Madrid): 2026-11-26 09:09 America/Edmonton (2026-11-26T15:09:29Z); X-band 127.8 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-26 10:18 America/Edmonton (2026-11-26T16:18:12Z); X-band 0 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-26 11:27 America/Edmonton (2026-11-26T17:27:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-63 (Madrid): 2026-11-26 12:19 America/Edmonton (2026-11-26T18:19:20Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-26 12:19 America/Edmonton (2026-11-26T18:19:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-26 02:32 America/Edmonton (2026-11-26T08:32:34Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -34,26 +34,26 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - 2026-11-26 10:18 America/Edmonton (2026-11-26T16:18:12Z) — VGR1 signal lost on DSS-53
 - 2026-11-26 10:18 America/Edmonton (2026-11-26T16:18:12Z) — VGR1 signal lost on DSS-56
 - 2026-11-26 10:18 America/Edmonton (2026-11-26T16:18:12Z) — VGR1 signal lost on DSS-65
+- 2026-11-26 13:28 America/Edmonton (2026-11-26T19:28:39Z) — VGR1 signal lost on DSS-63
 
 ## Offline / anomalous dishes (latest snapshot)
 
 - DSS-14 (Goldstone): offline — Engineering Upgrades
 - DSS-55 (Madrid): offline — Engineering Upgrades
-- DSS-34 (Canberra): offline — Antenna Calibration
 
 ## Latest PHNL wind
 
-Observed: 2026-11-26 12:00 America/Edmonton (2026-11-26T18:00:00Z)
-Wind: 350° at 10 kt, gusting 19 kt
+Observed: 2026-11-26 13:00 America/Edmonton (2026-11-26T19:00:00Z)
+Wind: 330° at 14 kt, gusting 23 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 261753Z 35010G19KT 10SM FEW025 FEW050 21/14 A2992 RMK AO2 SLP133 T02060144 10206 20189 53018 $`
+Raw: `METAR PHNL 261853Z 33014G23KT 10SM FEW030 SCT050 23/13 A2994 RMK AO2 SLP139 T02280133 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 Gust values in parentheses.
 
-- 08R (080°): crosswind 10 kt from the left, headwind -0 kt (gust: 19 kt cross, HW -0 kt)
-- 26L (260°): crosswind 10 kt from the right, headwind 0 kt (gust: 19 kt cross, HW 0 kt)
-- 04R (040°): crosswind 7.7 kt from the left, headwind 6.4 kt (gust: 14.6 kt cross, HW 12.2 kt)
-- 22L (220°): crosswind 7.7 kt from the right, tailwind 6.4 kt (gust: 14.6 kt cross, TW 12.2 kt)
+- 08R (080°): crosswind 13.2 kt from the left, tailwind 4.8 kt (gust: 21.6 kt cross, TW 7.9 kt)
+- 26L (260°): crosswind 13.2 kt from the right, headwind 4.8 kt (gust: 21.6 kt cross, HW 7.9 kt)
+- 04R (040°): crosswind 13.2 kt from the left, headwind 4.8 kt (gust: 21.6 kt cross, HW 7.9 kt)
+- 22L (220°): crosswind 13.2 kt from the right, tailwind 4.8 kt (gust: 21.6 kt cross, TW 7.9 kt)
