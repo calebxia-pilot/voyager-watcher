@@ -1,28 +1,8 @@
 {
- "fetched_utc": "2026-11-26T19:28:42Z",
- "start": "2026-330T13:28:42",
- "end": "2026-331T13:28:42",
+ "fetched_utc": "2026-11-26T23:27:28Z",
+ "start": "2026-330T17:27:28",
+ "end": "2026-331T17:27:28",
  "items": [
-  {
-   "soecode": "C",
-   "week": 48,
-   "activity": "TLCS1640 U/L    ",
-   "year": 2026,
-   "bot": "2026-330T16:15:00",
-   "nib": " ",
-   "projuser": "VGR1",
-   "endtime": "2026-330T19:10:00",
-   "starttime": "2026-330T15:30:00",
-   "eot": "2026-330T18:55:00",
-   "version": 96,
-   "activitytype": "SSPA",
-   "wrkcat": "1A1",
-   "activityid": 12807401,
-   "scheduleitemid": 24681235,
-   "configcode": "0057",
-   "facility": 63,
-   "equipmentlist": "CCP,NMC,RRPB,STXL,TLPA,UPL,XHMT"
-  },
   {
    "soecode": "D",
    "week": 48,
