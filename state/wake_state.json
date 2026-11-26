@@ -1,15 +1,15 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-26T15:09:29Z",
+    "ts_utc": "2026-11-26T16:18:12Z",
     "ok": true,
     "contacts": [
       {
         "spacecraft": "VGR1",
         "dish": "DSS-53",
         "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
+        "signal_active": false,
+        "power_dbm": -170.0,
         "band": "X",
         "data_rate_bps": 40.0
       },
@@ -17,8 +17,8 @@
         "spacecraft": "VGR1",
         "dish": "DSS-56",
         "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
+        "signal_active": false,
+        "power_dbm": -180.0,
         "band": "X",
         "data_rate_bps": 159.7
       },
@@ -26,10 +26,19 @@
         "spacecraft": "VGR1",
         "dish": "DSS-65",
         "station": "Madrid",
+        "signal_active": false,
+        "power_dbm": -190.0,
+        "band": "X",
+        "data_rate_bps": 127.8
+      },
+      {
+        "spacecraft": "VGR1",
+        "dish": "DSS-63",
+        "station": "Madrid",
         "signal_active": true,
         "power_dbm": -160.0,
         "band": "X",
-        "data_rate_bps": 127.8
+        "data_rate_bps": 0.0
       }
     ],
     "anomalous": []
@@ -51,6 +60,12 @@
       "event": "phnl_crosswind",
       "time_utc": "2026-11-26T14:05:58Z",
       "event_time_utc": "2026-11-26T07:00:00.000Z",
+      "delivered": true
+    },
+    {
+      "event": "unexpected_antenna",
+      "time_utc": "2026-11-26T16:18:16Z",
+      "event_time_utc": "2026-11-26T16:18:12Z",
       "delivered": true
     }
   ],
