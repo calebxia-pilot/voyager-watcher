@@ -1,18 +1,12 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-26T19:28:39Z",
+    "ts_utc": "2026-11-26T20:28:26Z",
     "ok": true,
     "contacts": [],
     "anomalous": []
   },
   "sent": [
-    {
-      "event": "voyager_lost",
-      "time_utc": "2026-11-24T20:07:09Z",
-      "event_time_utc": "2026-11-24T20:07:04Z",
-      "delivered": true
-    },
     {
       "event": "voyager_lost",
       "time_utc": "2026-11-25T13:45:51Z",
@@ -29,6 +23,12 @@
       "event": "unexpected_antenna",
       "time_utc": "2026-11-26T16:18:16Z",
       "event_time_utc": "2026-11-26T16:18:12Z",
+      "delivered": true
+    },
+    {
+      "event": "phnl_crosswind",
+      "time_utc": "2026-11-26T20:28:28Z",
+      "event_time_utc": "2026-11-26T20:00:00.000Z",
       "delivered": true
     }
   ],
