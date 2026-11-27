@@ -1,7 +1,7 @@
 {
- "fetched_utc": "2026-11-27T10:40:59Z",
- "start": "2026-331T04:40:59",
- "end": "2026-332T04:40:59",
+ "fetched_utc": "2026-11-27T11:38:27Z",
+ "start": "2026-331T05:38:27",
+ "end": "2026-332T05:38:27",
  "items": [
   {
    "soecode": "A",
@@ -61,6 +61,46 @@
    "scheduleitemid": 23748073,
    "configcode": "N00K",
    "facility": 43,
+   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
+  },
+  {
+   "soecode": "K",
+   "week": 48,
+   "activity": "ARY R36 BLF U/L ",
+   "year": 2026,
+   "bot": "2026-332T06:10:00",
+   "nib": " ",
+   "projuser": "VGR2",
+   "endtime": "2026-332T10:25:00",
+   "starttime": "2026-332T05:25:00",
+   "eot": "2026-332T10:10:00",
+   "version": 96,
+   "activitytype": "ARRAY",
+   "wrkcat": "1A1",
+   "activityid": 11951949,
+   "scheduleitemid": 23748070,
+   "configcode": "R00N",
+   "facility": 34,
+   "equipmentlist": "ARRAY,CCP,NMC,RRPB=2,STXL,TLPA=2,UPL,XHMT"
+  },
+  {
+   "soecode": "A",
+   "week": 48,
+   "activity": "ARY S BLF U/L   ",
+   "year": 2026,
+   "bot": "2026-332T06:10:00",
+   "nib": " ",
+   "projuser": "VGR2",
+   "endtime": "2026-332T10:25:00",
+   "starttime": "2026-332T05:45:00",
+   "eot": "2026-332T10:10:00",
+   "version": 96,
+   "activitytype": "ARRAY",
+   "wrkcat": "1A1",
+   "activityid": 11951949,
+   "scheduleitemid": 23748069,
+   "configcode": "N00K",
+   "facility": 36,
    "equipmentlist": "NMC,RRPB,TLPA,XHMT"
   }
  ]
