@@ -1,12 +1,11 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-27 10:03 America/Edmonton (2026-11-27T16:03:12Z)
+Generated: 2026-11-27 11:13 America/Edmonton (2026-11-27T17:13:23Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
 
 ### Voyager 1 (VGR1)
-- DSS-63 (Madrid): 2026-11-26 10:18 America/Edmonton (2026-11-26T16:18:12Z); X-band 0 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-26 11:27 America/Edmonton (2026-11-26T17:27:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-26 12:19 America/Edmonton (2026-11-26T18:19:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 17:27 America/Edmonton (2026-11-26T23:27:21Z); X-band 40 bps, -160 dBm; 1 sample(s)
@@ -41,16 +40,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-27 10:00 America/Edmonton (2026-11-27T16:00:00Z)
-Wind: 350° at 8 kt
+Observed: 2026-11-27 11:00 America/Edmonton (2026-11-27T17:00:00Z)
+Wind: 320° at 5 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 271553Z 35008KT 10SM FEW025 FEW040 SCT070 18/16 A3007 RMK AO2 RAE27 SLP181 P0000 T01830161 $`
+Raw: `METAR PHNL 271653Z 32005KT 10SM FEW025 SCT044 18/16 A3008 RMK AO2 SLP184 SHRA N T01830156 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 8 kt from the left, headwind -0 kt
-- 26L (260°): crosswind 8 kt from the right, headwind 0 kt
-- 04R (040°): crosswind 6.1 kt from the left, headwind 5.1 kt
-- 22L (220°): crosswind 6.1 kt from the right, tailwind 5.1 kt
+- 08R (080°): crosswind 4.3 kt from the left, tailwind 2.5 kt
+- 26L (260°): crosswind 4.3 kt from the right, headwind 2.5 kt
+- 04R (040°): crosswind 4.9 kt from the left, headwind 0.9 kt
+- 22L (220°): crosswind 4.9 kt from the right, tailwind 0.9 kt
