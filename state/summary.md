@@ -1,12 +1,11 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-27 11:13 America/Edmonton (2026-11-27T17:13:23Z)
+Generated: 2026-11-27 12:07 America/Edmonton (2026-11-27T18:07:05Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
 
 ### Voyager 1 (VGR1)
-- DSS-63 (Madrid): 2026-11-26 11:27 America/Edmonton (2026-11-26T17:27:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-26 12:19 America/Edmonton (2026-11-26T18:19:20Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 17:27 America/Edmonton (2026-11-26T23:27:21Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 18:27 America/Edmonton (2026-11-27T00:27:49Z); X-band 40 bps, -160 dBm; 1 sample(s)
@@ -40,16 +39,16 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-27 11:00 America/Edmonton (2026-11-27T17:00:00Z)
-Wind: 320° at 5 kt
+Observed: 2026-11-27 12:00 America/Edmonton (2026-11-27T18:00:00Z)
+Wind: 350° at 7 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 271653Z 32005KT 10SM FEW025 SCT044 18/16 A3008 RMK AO2 SLP184 SHRA N T01830156 $`
+Raw: `METAR PHNL 271753Z 35007KT 10SM FEW025 SCT039 21/15 A3010 RMK AO2 SLP191 60000 T02110150 10211 20178 53012`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
 
-- 08R (080°): crosswind 4.3 kt from the left, tailwind 2.5 kt
-- 26L (260°): crosswind 4.3 kt from the right, headwind 2.5 kt
-- 04R (040°): crosswind 4.9 kt from the left, headwind 0.9 kt
-- 22L (220°): crosswind 4.9 kt from the right, tailwind 0.9 kt
+- 08R (080°): crosswind 7 kt from the left, headwind -0 kt
+- 26L (260°): crosswind 7 kt from the right, headwind 0 kt
+- 04R (040°): crosswind 5.4 kt from the left, headwind 4.5 kt
+- 22L (220°): crosswind 5.4 kt from the right, tailwind 4.5 kt
