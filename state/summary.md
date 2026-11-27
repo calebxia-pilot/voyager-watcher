@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-27 02:41 America/Edmonton (2026-11-27T08:41:00Z)
+Generated: 2026-11-27 03:48 America/Edmonton (2026-11-27T09:48:33Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -19,10 +19,10 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 - DSS-43 (Canberra): 2026-11-26 18:27 America/Edmonton (2026-11-27T00:27:49Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 19:55 America/Edmonton (2026-11-27T01:55:00Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 20:51 America/Edmonton (2026-11-27T02:51:36Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-63 (Madrid): 2026-11-27 02:40 America/Edmonton (2026-11-27T08:40:55Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-27 02:40 America/Edmonton (2026-11-27T08:40:55Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-27 03:48 America/Edmonton (2026-11-27T09:48:27Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
-- DSS-43 (Canberra): 2026-11-26 03:44 America/Edmonton (2026-11-26T09:44:52Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 04:42 America/Edmonton (2026-11-26T10:42:19Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 05:41 America/Edmonton (2026-11-26T11:41:21Z); X-band 160 bps, -160 dBm; 1 sample(s)
 - DSS-43 (Canberra): 2026-11-26 06:49 America/Edmonton (2026-11-26T12:49:23Z); X-band 160 bps, -160 dBm; 1 sample(s)
@@ -50,11 +50,11 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Latest PHNL wind
 
-Observed: 2026-11-27 02:00 America/Edmonton (2026-11-27T08:00:00Z)
+Observed: 2026-11-27 03:00 America/Edmonton (2026-11-27T09:00:00Z)
 Wind: 280° at 5 kt
 Visibility: 10+ SM
 Ceiling: none (no BKN/OVC layer)
-Raw: `METAR PHNL 270753Z 28005KT 10SM FEW030 FEW040 18/13 A3005 RMK AO2 SLP174 T01830133 $`
+Raw: `METAR PHNL 270853Z 28005KT 10SM FEW030 FEW045 17/13 A3005 RMK AO2 SLP175 T01720133 51010 $`
 
 Crosswind / headwind for PHNL 26L/08R (~260°/080°) and 04R/22L (~040°/220°).
 Crosswind is the component from the left or right of the nose; headwind is positive, tailwind negative.
