@@ -1,7 +1,7 @@
 {
- "fetched_utc": "2026-11-28T00:48:25Z",
- "start": "2026-331T18:48:25",
- "end": "2026-332T18:48:25",
+ "fetched_utc": "2026-11-28T04:56:48Z",
+ "start": "2026-331T22:56:48",
+ "end": "2026-332T22:56:48",
  "items": [
   {
    "soecode": "A",
@@ -41,6 +41,26 @@
    "scheduleitemid": 24681233,
    "configcode": "N00K",
    "facility": 63,
+   "equipmentlist": "NMC,RRPB,TLPA,XHMT"
+  },
+  {
+   "soecode": "A",
+   "week": 48,
+   "activity": "CMD D/L         ",
+   "year": 2026,
+   "bot": "2026-332T22:55:00",
+   "nib": " ",
+   "projuser": "VGR1",
+   "endtime": "2026-333T03:30:00",
+   "starttime": "2026-332T22:30:00",
+   "eot": "2026-333T03:15:00",
+   "version": 97,
+   "activitytype": "SSPA",
+   "wrkcat": "1A1",
+   "activityid": 12807398,
+   "scheduleitemid": 24681232,
+   "configcode": "N00K",
+   "facility": 43,
    "equipmentlist": "NMC,RRPB,TLPA,XHMT"
   },
   {
