@@ -1,6 +1,6 @@
 # DSN / PHNL watcher summary
 
-Generated: 2026-11-28 11:18 America/Edmonton (2026-11-28T17:18:14Z)
+Generated: 2026-11-28 12:04 America/Edmonton (2026-11-28T18:04:35Z)
 Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 
 ## Voyager contacts — last 24 hours
@@ -8,7 +8,8 @@ Window: last 24 hours. Times below are America/Edmonton with UTC in parentheses.
 ### Voyager 1 (VGR1)
 - DSS-63 (Madrid): 2026-11-28 03:15 America/Edmonton (2026-11-28T09:15:00Z); X-band 40 bps, -160 dBm; 1 sample(s)
 - DSS-63 (Madrid): 2026-11-28 04:11 America/Edmonton (2026-11-28T10:11:38Z); X-band 40 bps, -160 dBm; 1 sample(s)
-- DSS-63 (Madrid): 2026-11-28 11:18 America/Edmonton (2026-11-28T17:18:12Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-28 11:18 America/Edmonton (2026-11-28T17:18:12Z); X-band 40 bps, -160 dBm; 1 sample(s)
+- DSS-63 (Madrid): 2026-11-28 12:04 America/Edmonton (2026-11-28T18:04:13Z) → ongoing; X-band 40 bps, -160 dBm; 1 sample(s)
 
 ### Voyager 2 (VGR2)
 - DSS-43 (Canberra): 2026-11-27 18:48 America/Edmonton (2026-11-28T00:48:18Z); X-band 0 bps, -160 dBm; 1 sample(s)
