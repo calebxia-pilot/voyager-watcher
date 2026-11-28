@@ -1,15 +1,15 @@
 {
   "version": 1,
   "last_dsn": {
-    "ts_utc": "2026-11-28T18:04:13Z",
+    "ts_utc": "2026-11-28T18:55:49Z",
     "ok": true,
     "contacts": [
       {
         "spacecraft": "VGR1",
         "dish": "DSS-63",
         "station": "Madrid",
-        "signal_active": true,
-        "power_dbm": -160.0,
+        "signal_active": false,
+        "power_dbm": -170.0,
         "band": "X",
         "data_rate_bps": 40.0
       }
